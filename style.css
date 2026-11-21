@@ -71,7 +71,7 @@ summary:focus-visible {
   outline-offset: 3px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
