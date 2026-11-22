@@ -67,6 +67,9 @@ a:hover { color: var(--accent); }
 .studio-note { max-width: 20rem; text-align: center; }
 .studio-note summary { min-height: 44px; padding-block: .55rem; }
 .studio-note p { margin-bottom: 0; }
+/* The night note is revealed by the selected theme and the native disclosure. */
+.studio-note .night-note { display: none; }
+:root[data-design="night"] .studio-note .night-note { display: block; margin-top: .65rem; color: var(--accent); }
 .brand { text-decoration: none; font-size: 1.45rem; font-weight: 800; letter-spacing: -.075em; }
 .brand span, em { color: var(--accent); }
 h1, h2, h3 { line-height: 1.04; letter-spacing: -.045em; margin: 0 0 .55em; font-weight: 650; }
@@ -114,6 +117,10 @@ article.feature#portfolio { display: block; min-width: 0; padding: 0; }
 .feature-link .caption p, .feature-link .caption h2 { margin-bottom: 0; color: inherit; }
 .case-note { margin: .8rem 0 0; }
 .case-figure { margin: 0 0 2.5rem; }
+.extra-frame { margin-bottom: 1.5rem; }
+.extra-frame summary { display: list-item; width: fit-content; min-height: 44px; padding-block: .55rem; color: var(--muted); }
+.extra-frame .case-figure { width: min(100%, 43rem); margin: .75rem 0 0; }
+.extra-frame figcaption { margin-top: .65rem; color: var(--muted); }
 .timeline { padding: 0 0 2rem 2rem; margin: 0; }
 .timeline li { padding: 1rem 0; border-top: 1px solid var(--line); }
 .timeline li::marker { color: var(--accent); font-weight: 700; }

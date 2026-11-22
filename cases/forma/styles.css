@@ -78,6 +78,13 @@ input[type=radio],input[type=checkbox] { accent-color: var(--accent); width: 1.1
   .summary { position: sticky; top: 1rem; }
 }
 .summary h3,.booking h3 { margin-bottom: .6rem; }
+.summary .full-program-note {
+  margin-top: .5rem;
+  padding-inline-start: .65rem;
+  border-inline-start: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: .88rem;
+}
 .summary ul { list-style: none; padding: 0; margin-block: 1.25rem; }
 .summary li { display: flex; gap: .75rem; justify-content: space-between; padding: .3rem 0; }
 .summary li span:last-child { white-space: nowrap; }

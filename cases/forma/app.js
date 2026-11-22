@@ -83,6 +83,9 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
     const empty = items.length === 0;
     byId('continue').disabled = empty;
     byId('hint').hidden = !empty;
+    // Reveal the workshop note for a full selection without changing the quote.
+    const fullProgramNote = byId('full-program-note');
+    if (fullProgramNote) fullProgramNote.hidden = empty || items.length !== services.length;
     byId('review').textContent = describeQuote({ items, total });
     if (empty) byId('booking-section').hidden = true;
     byId('receipt').hidden = true;
