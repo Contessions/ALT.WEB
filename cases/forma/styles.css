@@ -176,3 +176,23 @@ dd { padding: .4rem 0 1rem; }
 @media (max-width: 650px) {
   .care-compare dl, .care-faq { grid-template-columns: minmax(0,1fr); }
 }
+
+.polish-landing .header { justify-content: space-between; gap: .65rem; }
+.polish-landing h1 { font-size: clamp(2.8rem,7.3vw,6.8rem); }
+.polish-landing h1 em { display: block; }
+.polish-landing .hero-photo { object-position: 60% 48%; }
+.polish-landing .landing-steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,13rem),1fr)); gap: 1rem; margin-bottom: 1.75rem; }
+.polish-landing .secondary { display: inline-flex; align-items: center; }
+
+.primary, .secondary, .nav-cta, .program, .choice, .option, .inspection-modes label {
+  transition: background-color .18s, border-color .18s, color .18s, transform .18s;
+}
+.program:focus-within, .choice:focus-within, .option:focus-within, .inspection-modes label:focus-within { border-color: var(--accent); }
+.primary:active:enabled, .secondary:active { transform: translateY(1px); }
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover:enabled, .primary[href]:hover { transform: translateY(-2px); }
+  .program:has(a:hover), .choice:hover, .option:hover, .inspection-modes label:hover { border-color: var(--accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary, .secondary, .nav-cta, .program, .choice, .option, .inspection-modes label { transition: none; transform: none !important; }
+}

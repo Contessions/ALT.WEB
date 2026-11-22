@@ -94,7 +94,10 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
   }
 
   renderCatalog();
-  updateQuote();
+  // Landing links can select a known service without submitting a booking.
+  const preset = new URLSearchParams(window.location.search).get('service');
+  if (serviceIndex.has(preset)) addService(preset);
+  else updateQuote();
 
   byId('vehicles').addEventListener('change', (event) => {
     const index = Number(event.target.value);

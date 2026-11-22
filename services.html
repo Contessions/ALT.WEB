@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#111613">
   <meta name="description" content="Услуги — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Услуги — ALT Web</title>
-  <link rel="stylesheet" href="style.css?v=2">
-  
+  <link rel="stylesheet" href="style.css?v=5">
+  <script src="bot-demo.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -21,23 +21,61 @@
 <p class="kicker">Услуги</p>
 <h1>Что мы можем сделать</h1>
 <p class="lead">Расскажите, кто приходит на ваш сайт и с какой задачей. Подберём формат и согласуем состав работ.</p></header>
-<div class="grid">
-<article class="card" id="landing">
-<h3>Лендинг</h3>
-<p>Для одной услуги, запуска или рекламной кампании.</p>
-<p><strong>Что входит</strong> Оффер, программа или цена, ответы на возражения и путь к обращению.</p></article>
-<article class="card" id="site">
-<h3>Сайт компании</h3>
-<p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
-<p><strong>Что входит</strong> Структура страниц, каталог услуг, кейсы, FAQ и контакты.</p></article>
-<article class="card" id="interactive">
-<h3>Интерактивный модуль</h3>
-<p>Для услуги, которую проще показать в действии.</p>
-<p><strong>Что входит</strong> Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p></article>
-<article class="card" id="telegram">
-<h3>Telegram-бот</h3>
-<p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
-<p><strong>Что входит</strong> Сценарий диалога, проверка ввода и способ передать запрос команде.</p></article></div>
+<div class="grid service-examples">
+  <article class="card" id="landing">
+    <h2>Лендинг</h2>
+    <p>Для одной услуги, запуска или рекламной кампании.</p>
+    <p><strong>Что входит</strong> Оффер, программа или цена, ответы на вопросы и путь к обращению.</p>
+    <a class="service-example" href="cases/forma/polish.html">
+      <div class="example-visual example-photo">
+        <img src="cases/forma/assets/detail.jpg" alt="" loading="lazy">
+      </div>
+      <span class="example-caption"><strong>Лендинг полировки FORMA</strong><span>Открыть демо</span></span>
+    </a>
+  </article>
+  <article class="card" id="site">
+    <h2>Сайт компании</h2>
+    <p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
+    <p><strong>Что входит</strong> Страницы услуг, кейсы, FAQ и контакты.</p>
+    <a class="service-example" href="index.html">
+      <div class="example-visual example-site" aria-hidden="true">
+        <span>ALT<span>.WEB</span></span>
+        <div>Услуги <span>Работы</span> Контакты</div>
+      </div>
+      <span class="example-caption"><strong>Многостраничный ALT.WEB</strong><span>На главную</span></span>
+    </a>
+  </article>
+  <article class="card" id="interactive">
+    <h2>Интерактивный модуль</h2>
+    <p>Для услуги, которую проще показать в действии.</p>
+    <p><strong>Что входит</strong> Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p>
+    <a class="service-example" href="cases/forma/index.html#estimate">
+      <div class="example-visual example-estimate" aria-hidden="true">
+        <span>Кроссовер</span>
+        <div>Полировка кузова <strong>15 000 ₽</strong></div>
+        <div>Химчистка салона <strong>10 000 ₽</strong></div>
+        <div class="example-total">Итого <strong>25 000 ₽</strong></div>
+      </div>
+      <span class="example-caption"><strong>Калькулятор FORMA</strong><span>Попробовать</span></span>
+    </a>
+  </article>
+  <article class="card" id="telegram">
+    <h2>Telegram-бот</h2>
+    <p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
+    <p><strong>Что входит</strong> Сценарий диалога, проверка ввода и способ передать запрос команде.</p>
+    <div class="bot-demo">
+      <p class="bot-heading"><strong>Бот детейлинга</strong><span>Демо в браузере</span></p>
+      <p class="bot-reply" id="bot-reply" role="status">Чем помочь? Выберите вопрос ниже.</p>
+      <div class="bot-choices" id="bot-choices" hidden>
+        <button type="button" data-topic="services" aria-pressed="false">Услуги</button>
+        <button type="button" data-topic="price" aria-pressed="false">Цена</button>
+        <button type="button" data-topic="booking" aria-pressed="false">Запись</button>
+      </div>
+      <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
+      <noscript>Включите JavaScript, чтобы попробовать диалог.</noscript>
+    </div>
+  </article>
+</div>
 <section class="band">
 <h2>Что поможет начать</h2>
 <p class="lead">Список услуг, несколько примеров работ, типичные вопросы клиентов и контакт, по которому вы принимаете обращения.</p><a class="button" href="contact.html">Обсудить задачу</a></section></div>
