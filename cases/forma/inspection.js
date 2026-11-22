@@ -3,7 +3,9 @@
 if (typeof siteModule !== 'undefined' && siteModule) {
   // Фиксированный образец остаётся одинаковым при сравнении двух состояний.
   const paint = document.getElementById('paint');
-  const context = paint.getContext('2d');
+  const comparison = document.getElementById('paint-comparison');
+  const correctedPaint = document.getElementById('corrected-paint');
+  const split = document.getElementById('paint-split');
   const lamp = document.getElementById('lamp');
   const lampValue = document.getElementById('lamp-value');
   const secret = document.getElementById('inspection-secret');
@@ -13,21 +15,37 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   const surfaceOffset = siteModule.surface();
   const sample = new Float64Array(siteModule.memory.buffer, surfaceOffset, scratchCount * 6 + flakeCount * 3);
 
-  function drawPaint() {
+  // The grain stays fixed when the lamp moves and is shared by both finishes.
+  const grainLayer = document.createElement('canvas');
+  grainLayer.width = 0;
+  function drawGrain(context, width, height, pixelRatio) {
+    if (grainLayer.width !== context.canvas.width || grainLayer.height !== context.canvas.height) {
+      grainLayer.width = context.canvas.width;
+      grainLayer.height = context.canvas.height;
+      const grain = grainLayer.getContext('2d');
+      if (!grain) return;
+      grain.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      for (let i = scratchCount * 6; i < sample.length; i += 3) {
+        grain.fillStyle = 'rgba(216,233,211,' + sample[i + 2] * .17 + ')';
+        grain.fillRect(sample[i] * width, sample[i + 1] * height, 1, .7);
+      }
+    }
+    context.drawImage(grainLayer, 0, 0, width, height);
+  }
+  function drawSurface(canvas, corrected) {
+    const context = canvas.getContext('2d');
     if (!context) return;
     const bounds = paint.getBoundingClientRect();
     const width = Math.max(1, Math.round(bounds.width));
     const height = Math.max(1, Math.round(bounds.height));
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-    if (paint.width !== Math.round(width * pixelRatio) || paint.height !== Math.round(height * pixelRatio)) {
-      paint.width = Math.round(width * pixelRatio);
-      paint.height = Math.round(height * pixelRatio);
+    if (canvas.width !== Math.round(width * pixelRatio) || canvas.height !== Math.round(height * pixelRatio)) {
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
     }
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    const corrected = document.querySelector('[name="finish"]:checked').value === 'corrected';
+
     const light = Number(lamp.value) / 100;
-    // This hint also works with the keyboard-controlled range input.
-    if (secret) secret.hidden = !corrected || light < 1;
     const lampX = width * (.1 + light * .8);
     const lampY = height * (.60 - light * .25);
 
@@ -46,10 +64,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     glow.addColorStop(1,'#c7dbb900');
     context.fillStyle = glow;
     context.fillRect(0,0,width,height);
-    for (let i = scratchCount * 6; i < sample.length; i += 3) {
-      context.fillStyle = 'rgba(216,233,211,' + sample[i + 2] * .17 + ')';
-      context.fillRect(sample[i] * width, sample[i + 1] * height, 1, .7);
-    }
+    drawGrain(context, width, height, pixelRatio);
     context.save();
     context.translate(lampX,lampY);
     context.rotate(-.38);
@@ -87,7 +102,11 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     pendingFrame = requestAnimationFrame(() => {
       pendingFrame = 0;
       lampValue.textContent = lamp.value + '%';
-      drawPaint();
+      const mode = document.querySelector('[name="finish"]:checked').value;
+      comparison.hidden = mode !== 'compare';
+      if (secret) secret.hidden = mode !== 'corrected' || Number(lamp.value) < 100;
+      drawSurface(paint, mode === 'corrected');
+      if (!comparison.hidden) drawSurface(correctedPaint, true);
     });
   }
   function positionLight(event) {
@@ -98,6 +117,11 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   paint.addEventListener('pointerdown', positionLight);
   paint.addEventListener('pointermove', (event) => {
     if (event.pointerType === 'mouse' || event.buttons === 1) positionLight(event);
+  });
+  // The divider clips the prepared layers without repainting the model.
+  split.addEventListener('input', () => {
+    comparison.style.setProperty('--split', split.value + '%');
+    split.setAttribute('aria-valuetext', split.value + ' процентов до полировки');
   });
   lamp.addEventListener('input', requestDraw);
   document.querySelector('.inspection-modes').addEventListener('change', requestDraw);

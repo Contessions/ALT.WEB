@@ -67,7 +67,12 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
   function updateQuote() {
     const { items, total } = calculateQuote();
     byId('vehicle-label').textContent = vehicles[vehicleIndex];
-    byId('total').textContent = currency.format(total);
+    const amount = byId('total');
+    const formatted = currency.format(total);
+    if (amount.textContent !== formatted && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      amount.animate([{ transform: 'translateY(4px)', color: 'var(--accent)' }, { transform: 'translateY(0)', color: 'var(--ink)' }], { duration: 260 });
+    }
+    amount.textContent = formatted;
     byId('mobile-price').textContent = currency.format(total);
     byId('lines').replaceChildren();
     items.forEach((item) => {

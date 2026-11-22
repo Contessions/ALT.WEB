@@ -6,11 +6,11 @@
   <meta name="theme-color" content="#101312">
   <meta name="description" content="Демонстрационный проект ALT Web. Подбор детейлинга, предварительный расчёт и пример заявки.">
   <title>FORMA — студия детейлинга · ALT Web</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script defer src="../../site-module.js"></script>
   <script defer src="catalog.js?v=3"></script>
-  <script defer src="app.js?v=4"></script>
-  <script defer src="inspection.js?v=2"></script>
+  <script defer src="app.js?v=5"></script>
+  <script defer src="inspection.js?v=5"></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">К содержанию</a>
@@ -25,7 +25,7 @@
       <div class="wrap hero-inner">
         <div class="hero-copy">
           <p class="eyebrow"><span></span> Студия детейлинга</p>
-          <h1 id="hero-title">Чистая<br><em>форма.</em></h1>
+          <h1 id="hero-title"><span class="title-line"><span>Чистая</span></span> <span class="title-line"><em>форма.</em></span></h1>
           <p class="lead">Полировка, защита кузова и уход за салоном. Подберите программу для своего автомобиля.</p>
           <a class="primary" href="#estimate">Рассчитать стоимость</a>
           <a class="hero-lab-link" href="#inspection">Осмотреть покрытие</a>
@@ -38,15 +38,24 @@
         <div class="inspection-copy">
           <p class="eyebrow"><span></span> Интерактивный осмотр</p>
           <h2 id="inspection-title">Лак под светом.</h2>
-          <p class="intro">Проведите светом по образцу. Тонкие следы моек проявляются в блике. Сравните покрытие до и после полировки.</p>
+          <p class="intro">Проведите светом по образцу. Тонкие следы моек проявляются в блике. В режиме «Сравнить» двигайте границу между исходным и отполированным лаком.</p>
           <a id="pick-polish" href="#estimate" class="secondary">Добавить полировку в расчёт</a>
         </div>
         <div class="inspection-console">
           <fieldset class="inspection-modes"><legend>Состояние лака</legend>
-            <label><input type="radio" name="finish" value="worn" checked> До полировки</label>
+            <label><input type="radio" name="finish" value="worn" checked> До</label>
             <label><input type="radio" name="finish" value="corrected"> После</label>
+            <label><input type="radio" name="finish" value="compare"> Сравнить</label>
           </fieldset>
-          <canvas id="paint" width="720" height="400" role="img" aria-label="Симуляция отражений света и тонких царапин на тёмном автомобильном лаке">Сравнение фактур автомобильного лака.</canvas>
+          <div class="paint-stage">
+            <canvas id="paint" width="720" height="400" role="img" aria-label="Симуляция отражений света и тонких царапин на тёмном автомобильном лаке">Сравнение фактур автомобильного лака.</canvas>
+            <div class="paint-comparison" id="paint-comparison" hidden>
+              <canvas id="corrected-paint" width="720" height="400" aria-hidden="true"></canvas>
+              <div class="paint-divider" aria-hidden="true"><span></span></div>
+              <span class="paint-label before" aria-hidden="true">До</span><span class="paint-label after" aria-hidden="true">После</span>
+              <input type="range" id="paint-split" min="5" max="95" value="50" aria-label="Доля образца до полировки" aria-valuetext="50 процентов до полировки">
+            </div>
+          </div>
           <div class="inspection-light">
             <label for="lamp">Положение света</label>
             <output id="lamp-value" for="lamp">48%</output>
