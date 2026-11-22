@@ -87,6 +87,7 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
     });
     const empty = items.length === 0;
     byId('continue').disabled = empty;
+    byId('download-quote').hidden = empty;
     byId('hint').hidden = !empty;
     // Reveal the workshop note for a full selection without changing the quote.
     const fullProgramNote = byId('full-program-note');
@@ -98,6 +99,23 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
     updateMobileTotal();
   }
 
+  byId('download-quote').addEventListener('click', () => {
+    const { items, total } = calculateQuote();
+    if (!items.length) return;
+    const lines = [
+      'FORMA · демонстрационный расчёт',
+      vehicles[vehicleIndex],
+      ...items.map(item => item.name + ' — ' + currency.format(item.prices[vehicleIndex])),
+      'Итого: ' + currency.format(total),
+      'Учебные цены. Этот расчёт не является записью.'
+    ];
+    const url = URL.createObjectURL(new Blob(['\uFEFF' + lines.join('\r\n')], { type: 'text/plain;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'FORMA-estimate.txt';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
   renderCatalog();
   // Landing links can select a known service without submitting a booking.
   const preset = new URLSearchParams(window.location.search).get('service');

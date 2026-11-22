@@ -9,7 +9,10 @@
   <script src="design.js?v=8"></script>
   <link rel="stylesheet" href="style.css?v=9">
   <script src="cases/forma/catalog.js?v=3" defer></script>
-  <script src="brief.js?v=2" defer></script>
+  <script src="service-selector.js" defer></script>
+  <script src="bot-demo.js" defer></script>
+  <link rel="stylesheet" href="paint-preview.css">
+  <script defer src="paint-preview.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -29,41 +32,86 @@
         <h1>Сайты, где услуги <em>понятны.</em></h1>
         <p class="lead">Дизайн и разработка сайтов для бизнеса. Помогаем клиенту разобраться в предложении и выбрать услугу.</p>
         <div class="actions">
-          <a class="button" href="#services">Посмотреть услуги</a>
+          <a class="button" href="#services">Подобрать формат</a>
           <a class="button secondary" href="work.html">Открыть работы</a>
         </div>
       </div>
 
     </section>
-<section class="wrap band" id="services">
-  <div class="section-head">
+<section class="wrap band task-finder" id="services">
+  <div class="section-head" id="brief">
     <p class="kicker">Услуги</p>
-    <h2>Подберём формат под задачу</h2>
+    <h2>Подберите формат сайта</h2>
   </div>
-  <div class="service-gallery">
-    <a class="service-cover" href="services.html#landing">
-      <div class="service-image"><img src="cases/forma/assets/detail.jpg" alt="" loading="lazy"></div>
-      <div class="service-copy"><h3>Лендинг</h3><p>Одна услуга, запуск или рекламная кампания.</p></div>
-    </a>
-    <a class="service-cover" href="services.html#site">
-      <div class="service-image"><img src="assets/studio-pages.webp" alt="" loading="lazy" width="1000" height="667"></div>
-      <div class="service-copy"><h3>Сайт компании</h3><p>Каталог услуг, кейсы и маршруты для разных клиентов.</p></div>
-    </a>
-    <a class="service-cover" href="services.html#interactive">
-      <div class="service-image"><img src="assets/studio-controls.webp" alt="" loading="lazy" width="1000" height="667"></div>
-      <div class="service-copy"><h3>Интерактивный модуль</h3><p>Калькулятор, конфигуратор или сравнение результата.</p></div>
-    </a>
-    <a class="service-cover" href="services.html#telegram">
-      <div class="service-image"><img src="assets/studio-chat.webp" alt="" loading="lazy" width="1000" height="667"></div>
-      <div class="service-copy"><h3>Telegram-бот</h3><p>Ответы на вопросы и выбор услуги в диалоге.</p></div>
-    </a>
+  <fieldset class="task-switch" hidden>
+    <legend>Что должен сделать посетитель?</legend>
+    <label><input type="radio" name="format" value="landing" checked>Понять услугу</label>
+    <label><input type="radio" name="format" value="site">Выбрать направление</label>
+    <label><input type="radio" name="format" value="interactive">Рассчитать цену</label>
+    <label><input type="radio" name="format" value="telegram">Получить ответ</label>
+  </fieldset>
+  <article class="task-panel" data-format="landing">
+    <div class="service-image"><img src="cases/forma/assets/detail.jpg" alt="Работа полировальной машинкой" loading="lazy"></div>
+    <div class="task-content">
+      <h3>Лендинг</h3><p>Одна услуга на одной странице: посетитель видит результат, разбирается в условиях и оставляет запрос.</p>
+      <ul class="deliverables"><li>Структура и дизайн страницы</li><li>Блок услуги, ответы на вопросы и обращение</li></ul>
+      <details class="sample-faq"><summary>Что даёт полировка?</summary><p>Уменьшает мелкие следы моек и возвращает блеск. В демо FORMA разницу можно рассмотреть под лампой.</p></details>
+      <div class="actions"><a class="button" href="contact.html?goal=explain">Обсудить лендинг</a><a class="sample-link" href="cases/forma/polish.html">Лендинг FORMA</a></div>
+    </div>
+  </article>
+  <article class="task-panel" data-format="site">
+    <div class="service-image"><img src="assets/studio-pages.webp" width="1000" height="667" alt="" loading="lazy"></div>
+    <div class="task-content">
+      <h3>Сайт компании</h3><p>Каждому направлению — своя страница. Клиент выбирает услугу, смотрит подходящую работу и находит контакт.</p>
+      <ul class="deliverables"><li>Карта разделов и навигация</li><li>Страницы услуг, кейсов и контактов</li></ul>
+      <nav class="sample-nav" aria-label="Пример разделов на сайте студии"><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a></nav>
+      <div class="actions"><a class="button" href="contact.html?goal=compare">Обсудить сайт</a></div>
+    </div>
+  </article>
+  <article class="task-panel" data-format="interactive">
+    <div class="service-image"><img src="assets/studio-controls.webp" width="1000" height="667" alt="" loading="lazy"></div>
+    <div class="task-content">
+      <h3>Калькулятор</h3><p>Клиент меняет параметры и сразу видит стоимость. Правила расчёта согласуем с командой до разработки.</p>
+      <ul class="deliverables"><li>Модель цен и проверка ввода</li><li>Интерактивный расчёт и итоговая сводка</li></ul>
+      <div class="sample-price" hidden>
+        <label for="sample-vehicle">Демо FORMA · полировка кузова</label>
+        <select id="sample-vehicle"></select>
+        <output for="sample-vehicle" aria-live="polite"></output>
+      </div>
+      <div class="actions"><a class="button" href="contact.html?goal=estimate">Обсудить расчёт</a><a class="sample-link" href="cases/forma/index.html#estimate">Калькулятор FORMA</a></div>
+    </div>
+  </article>
+  <article class="task-panel" data-format="telegram">
+    <div class="service-image"><img src="assets/studio-chat.webp" width="1000" height="667" alt="" loading="lazy"></div>
+    <div class="task-content">
+      <h3>Telegram-бот</h3><p>Клиент задаёт типичный вопрос, получает короткий ответ и переходит к подходящей услуге.</p>
+      <ul class="deliverables"><li>Сценарий диалога и ответы</li><li>Переход от запроса к следующему действию</li></ul>
+      <div class="bot-demo">
+        <p class="bot-reply" id="bot-reply" role="status">Демо бота FORMA. Что вас интересует?</p>
+        <div class="bot-choices" id="bot-choices" hidden><button type="button" data-topic="services" aria-pressed="false">Услуги</button><button type="button" data-topic="price" aria-pressed="false">Цена</button><button type="button" data-topic="booking" aria-pressed="false">Запись</button></div>
+        <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
+        <noscript>Для диалога включите JavaScript.</noscript>
+      </div>
+      <div class="actions"><a class="button" href="contact.html?goal=dialog">Обсудить бота</a></div>
+    </div>
+  </article>
+</section>
+<section class="wrap feature" id="portfolio" aria-labelledby="forma-heading">
+  <figure class="paint-preview">
+    <div class="paint-sample">
+      <img src="assets/paint-before.webp" width="960" height="480" loading="lazy" alt="Следы моек в отражении лампы на модели лака">
+      <img class="polished" src="assets/paint-after.webp" width="960" height="480" loading="lazy" alt="Та же поверхность после моделирования полировки">
+      <span class="divider" aria-hidden="true"></span>
+      <input id="paint-boundary" type="range" min="0" max="100" value="50" aria-label="Доля поверхности до полировки, в процентах">
+    </div>
+    <figcaption class="sample-labels"><span>До полировки</span><span>После</span></figcaption>
+  </figure>
+  <div><p class="kicker">Демонстрационный проект · Детейлинг</p>
+    <h2 id="forma-heading">FORMA</h2>
+    <p>Потяните границу и посмотрите, как меняется отражение в лаке. В полном осмотре можно передвинуть сам свет и добавить полировку в расчёт.</p>
+    <div class="actions"><a class="button" href="cases/forma/index.html#inspection">Открыть осмотр</a><a class="button secondary" href="work.html">О кейсе</a></div>
   </div>
 </section>
-<section class="wrap feature" id="portfolio"><a class="feature-cover" href="work.html" aria-label="Посмотреть кейс FORMA"><img src="cases/forma/assets/hero.jpg" alt="Графитовый автомобиль под инспекционным светом" loading="lazy"></a>
-<div>
-<p class="kicker">Демонстрационный кейс</p>
-<h2>FORMA</h2>
-<p>Подвижный свет показывает следы моек на лаке. Из осмотра можно сразу перейти к расчёту полировки для своего класса авто.</p><a class="button secondary" href="work.html">Как устроен кейс</a></div></section>
 <section class="wrap band">
 <div class="section-head">
 <p class="kicker">Работа над проектом</p>
@@ -79,34 +127,6 @@
 <h3>Передача</h3>
 <p>Передаём исходники и объясняем, как менять контент.</p></article></div>
 <p><a class="button secondary" href="process.html">Посмотреть этапы</a></p></section>
-    <div class="wrap brief-stage" id="brief">
-      <form class="brief" action="contact.html">
-        <div class="brief-heading">
-          <p class="kicker">Мини-бриф</p>
-          <h2>Что должен делать ваш сайт?</h2>
-        </div>
-        <fieldset>
-          <legend>Выберите задачу, чтобы увидеть формат</legend>
-          <label><input type="radio" name="goal" value="explain" checked>Объяснять услугу</label>
-          <label><input type="radio" name="goal" value="compare">Сравнивать услуги</label>
-          <label><input type="radio" name="goal" value="estimate">Считать стоимость</label>
-        </fieldset>
-        <div class="brief-preview" aria-hidden="true">
-          <div class="blueprint">
-            <div class="blueprint-bar"></div>
-            <div class="blueprint-body">
-              <div class="blueprint-type"><i></i><i></i><i></i></div>
-              <div class="blueprint-module"><i></i><i></i><i></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="recommendation" aria-live="polite">
-          <strong id="recommendation-title">Лендинг</strong>
-          <p id="recommendation-copy">Одна страница с предложением, ответами на вопросы и кнопкой обращения.</p>
-        </div>
-        <button class="button" type="submit">Подготовить обращение</button>
-      </form>
-    </div>
     <section class="footer-cta">
 <div class="wrap">
 <h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>

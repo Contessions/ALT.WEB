@@ -8,6 +8,8 @@
   <title>Услуги — ALT Web</title>
   <script src="design.js?v=8"></script>
   <link rel="stylesheet" href="style.css?v=9">
+  <script src="cases/forma/catalog.js?v=3" defer></script>
+  <script src="service-selector.js" defer></script>
   <script src="bot-demo.js" defer></script>
 </head>
 <body>
@@ -27,8 +29,16 @@
 <p class="kicker">Услуги</p>
 <h1>Что мы можем сделать</h1>
 <p class="lead">Расскажите, кто приходит на ваш сайт и с какой задачей. Подберём формат и согласуем состав работ.</p></header>
-<div class="grid service-examples">
-  <article class="card" id="landing">
+<div class="task-finder service-directory">
+  <fieldset class="task-switch" hidden>
+    <legend>Что должен сделать посетитель?</legend>
+    <label><input type="radio" name="format" value="landing" checked>Понять услугу</label>
+    <label><input type="radio" name="format" value="site">Выбрать направление</label>
+    <label><input type="radio" name="format" value="interactive">Рассчитать цену</label>
+    <label><input type="radio" name="format" value="telegram">Получить ответ</label>
+  </fieldset>
+<div class="service-examples">
+  <article class="card" data-format="landing" id="landing">
     <h2>Лендинг</h2>
     <p>Для одной услуги, запуска или рекламной кампании.</p>
     <p><strong>Что входит</strong> Оффер, программа или цена, ответы на вопросы и путь к обращению.</p>
@@ -38,8 +48,9 @@
       </div>
       <span class="example-caption"><strong>Лендинг полировки FORMA</strong><span>Открыть демо</span></span>
     </a>
+    <a class="button format-contact" href="contact.html?goal=explain">Обсудить этот формат</a>
   </article>
-  <article class="card" id="site">
+  <article class="card" data-format="site" id="site">
     <h2>Сайт компании</h2>
     <p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
     <p><strong>Что входит</strong> Страницы услуг, кейсы, FAQ и контакты.</p>
@@ -47,22 +58,24 @@
       <div class="example-visual example-photo"><img src="assets/studio-pages.webp" alt="" loading="lazy" width="1000" height="667"></div>
       <span class="example-caption"><strong>Многостраничный ALT.WEB</strong><span>На главную</span></span>
     </a>
+    <a class="button format-contact" href="contact.html?goal=compare">Обсудить этот формат</a>
   </article>
-  <article class="card" id="interactive">
+  <article class="card" data-format="interactive" id="interactive">
     <h2>Интерактивный модуль</h2>
     <p>Для услуги, которую проще показать в действии.</p>
     <p><strong>Что входит</strong> Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p>
-    <a class="service-example" href="cases/forma/index.html#estimate">
-      <div class="example-visual example-photo"><img src="assets/studio-controls.webp" alt="" loading="lazy" width="1000" height="667"></div><div class="example-visual example-estimate" aria-hidden="true">
-        <span>Кроссовер</span>
-        <div>Полировка кузова <strong>15 000 ₽</strong></div>
-        <div>Химчистка салона <strong>10 000 ₽</strong></div>
-        <div class="example-total">Итого <strong>25 000 ₽</strong></div>
+    <div class="sample-price" hidden>
+        <label for="sample-vehicle">Демо FORMA · полировка кузова</label>
+        <select id="sample-vehicle"></select>
+        <output for="sample-vehicle" aria-live="polite"></output>
       </div>
+    <a class="service-example" href="cases/forma/index.html#estimate">
+      <div class="example-visual example-photo"><img src="assets/studio-controls.webp" alt="" loading="lazy" width="1000" height="667"></div>
       <span class="example-caption"><strong>Калькулятор FORMA</strong><span>Попробовать</span></span>
     </a>
+    <a class="button format-contact" href="contact.html?goal=estimate">Обсудить этот формат</a>
   </article>
-  <article class="card" id="telegram">
+  <article class="card" data-format="telegram" id="telegram">
     <h2>Telegram-бот</h2>
     <p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
     <p><strong>Что входит</strong> Сценарий диалога, проверка ввода и способ передать запрос команде.</p>
@@ -77,7 +90,9 @@
       <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
       <noscript>Включите JavaScript, чтобы попробовать диалог.</noscript>
     </div>
+    <a class="button format-contact" href="contact.html?goal=dialog">Обсудить этот формат</a>
   </article>
+</div>
 </div>
 <section class="band">
 <h2>Что поможет начать</h2>

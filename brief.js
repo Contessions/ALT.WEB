@@ -6,16 +6,6 @@ function recommendation(goal) {
   return Object.hasOwn(briefFormats, goal) ? briefFormats[goal] : undefined;
 }
 
-const brief = document.querySelector('.brief');
-if (brief) {
-  brief.addEventListener('change', () => {
-    const selected = recommendation(new FormData(brief).get('goal'));
-    if (!selected) return;
-    document.getElementById('recommendation-title').textContent = selected.title;
-    document.getElementById('recommendation-copy').textContent = selected.description;
-  });
-}
-
 const builder = document.getElementById('brief-builder');
 if (builder) {
   const business = document.getElementById('brief-business');

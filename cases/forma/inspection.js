@@ -6,6 +6,8 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   const comparison = document.getElementById('paint-comparison');
   const correctedPaint = document.getElementById('corrected-paint');
   const split = document.getElementById('paint-split');
+  const bodywork = document.querySelector('.hero-photo');
+  const lampInset = .07;
   const lamp = document.getElementById('lamp');
   const lampValue = document.getElementById('lamp-value');
   const secret = document.getElementById('inspection-secret');
@@ -32,6 +34,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     }
     context.drawImage(grainLayer, 0, 0, width, height);
   }
+
   function drawSurface(canvas, corrected) {
     const context = canvas.getContext('2d');
     if (!context) return;
@@ -46,34 +49,44 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
     const light = Number(lamp.value) / 100;
-    const lampX = width * (.1 + light * .8);
-    const lampY = height * (.60 - light * .25);
+    const lampX = width * (lampInset + light * (1 - 2 * lampInset));
+    const lampY = height * (.55 - light * .21);
 
-    // Изогнутая панель: широкое отражение стены и узкая линия канта.
-    const metal = context.createLinearGradient(0, 0, width * .22, height);
-    [[0,'#08111c'],[.2,'#263443'],[.32,'#48596c'],[.39,'#202e3c'],
-      [.51,'#101924'],[.68,'#293644'],[.69,'#596775'],[.715,'#111c29'],[1,'#080e16']]
-      .forEach(([stop,color]) => metal.addColorStop(stop,color));
-    context.fillStyle = metal;
+    context.fillStyle = '#17202b';
     context.fillRect(0, 0, width, height);
-    const radius = Math.max(width * .39, height * .6);
-    const glow = context.createRadialGradient(lampX,lampY,0,lampX,lampY,radius);
-    glow.addColorStop(0, corrected ? '#e6f0ff6e' : '#edf2faaa');
-    glow.addColorStop(.16, corrected ? '#c1d7ef43' : '#d9e4f06c');
-    glow.addColorStop(.55,'#aec2d81c');
-    glow.addColorStop(1,'#c5d7ee00');
-    context.fillStyle = glow;
-    context.fillRect(0,0,width,height);
+    if (bodywork.complete && bodywork.naturalWidth) {
+      // A crop of the same painted bumper in both finishes. Keep the reflection
+      // straight on a narrow screen by cropping instead of stretching the photo.
+      const frameWidth = bodywork.naturalWidth * .30;
+      const frameHeight = bodywork.naturalHeight * .15;
+      const sourceWidth = Math.min(frameWidth, frameHeight * width / height);
+      const sourceHeight = sourceWidth * height / width;
+      context.drawImage(bodywork,
+        bodywork.naturalWidth * .68 + (frameWidth - sourceWidth) * .5,
+        bodywork.naturalHeight * .62 + (frameHeight - sourceHeight) * .5,
+        sourceWidth, sourceHeight, 0, 0, width, height);
+    }
+    context.fillStyle = corrected ? '#08162555' : '#17233244';
+    context.fillRect(0, 0, width, height);
     drawGrain(context, width, height, pixelRatio);
+
+    const radius = Math.max(width * .38, height * .72);
+    const glow = context.createRadialGradient(lampX, lampY, 0, lampX, lampY, radius);
+    glow.addColorStop(0, corrected ? '#e7f1ff96' : '#fff3d5dc');
+    glow.addColorStop(.10, corrected ? '#cbdeff32' : '#f6dfbb95');
+    glow.addColorStop(.35, corrected ? '#adc5e407' : '#c2cada50');
+    glow.addColorStop(1, '#bed1e600');
+    context.fillStyle = glow;
+    context.fillRect(0, 0, width, height);
     context.save();
     context.translate(lampX,lampY);
-    context.rotate(-.38);
-    const beamLength = height * .47;
-    for (const offset of [-5, 5]) {
+    context.rotate(-.63);
+    const beamLength = height * .36;
+    for (const offset of [-4, 4]) {
       context.shadowColor = '#e6f2ff';
-      context.shadowBlur = corrected ? 7 : 15;
+      context.shadowBlur = corrected ? 4 : 14;
       context.strokeStyle = '#e4efff';
-      context.lineWidth = corrected ? 2.5 : 3.4;
+      context.lineWidth = corrected ? 2 : 3.2;
       context.beginPath();
       context.moveTo(offset,-beamLength * .5);
       context.quadraticCurveTo(offset + 4,0,offset,beamLength * .5);
@@ -82,16 +95,25 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     context.restore();
 
     // Одинаковые дуги проявляются с разной силой только в зоне скользящего света.
-    context.lineWidth = .85;
+    context.lineCap = 'round';
     for (let i = 0; i < scratchCount * 6; i += 6) {
       const x = sample[i] * width;
       const y = sample[i + 1] * height;
-      const angle = sample[i + 3];
+      const depth = sample[i + 5];
+      // Long wash marks follow broad arcs. Their geometry is fixed in the coat;
+      // only their visibility changes under the moving inspection lamp.
+      const tangent = Math.atan2(y - height * .46, x - width * .49) + Math.PI / 2;
+      const angle = tangent + Math.sin(sample[i + 3]) * .40;
+      const halfLength = (2.6 + sample[i + 2] * 88) * Math.min(1.4, height / 240);
+      const dx = Math.cos(angle) * halfLength;
+      const dy = Math.sin(angle) * halfLength;
       const alpha = siteModule.scratch_alpha((x - lampX) / (radius * 1.15), (y - lampY) / radius, sample[i + 5], Number(corrected));
-      if (!alpha) continue;
-      context.strokeStyle = 'rgba(231,240,255,' + alpha + ')';
+      if (alpha < .01) continue;
+      context.lineWidth = .32 + .54 * depth;
+      context.strokeStyle = 'rgba(243,243,238,' + Math.min(.93, alpha * 1.25) + ')';
       context.beginPath();
-      context.arc(x, y, sample[i + 2] * height, angle, angle + sample[i + 4]);
+      context.moveTo(x - dx, y - dy);
+      context.quadraticCurveTo(x - dy * .16, y + dx * .16, x + dx, y + dy);
       context.stroke();
     }
   }
@@ -111,7 +133,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   }
   function positionLight(event) {
     const bounds = paint.getBoundingClientRect();
-    lamp.value = String(siteModule.light_percent(event.clientX - bounds.left, bounds.width));
+    lamp.value = String(siteModule.light_percent(event.clientX - bounds.left - bounds.width * lampInset, bounds.width * (1 - 2 * lampInset)));
     requestDraw();
   }
   paint.addEventListener('pointerdown', positionLight);
@@ -125,6 +147,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   });
   lamp.addEventListener('input', requestDraw);
   document.querySelector('.inspection-modes').addEventListener('change', requestDraw);
+  bodywork.addEventListener('load', requestDraw);
   new ResizeObserver(requestDraw).observe(paint);
   requestDraw();
 }

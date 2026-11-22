@@ -1,0 +1,9 @@
+.paint-preview { margin:0; min-width:0; }
+.paint-sample { --boundary:50%; position:relative; overflow:hidden; background:#11151d; color:white; }
+.feature .paint-sample img { width:100%; height:auto; aspect-ratio:2/1; object-fit:cover; }
+.paint-sample .polished { position:absolute; inset:0; clip-path:inset(0 0 0 var(--boundary)); }
+.paint-sample .divider { position:absolute; inset:0 auto 0 var(--boundary); width:2px; background:#eff4ff; pointer-events:none; }
+.paint-sample .divider::after { content:"‹  ›"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:grid; place-items:center; width:40px; height:38px; background:#edf2fb; color:#111620; font:700 22px/1 sans-serif; white-space:pre; }
+.paint-sample input { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
+.paint-sample:focus-within {outline:3px solid var(--accent);outline-offset:3px}
+.sample-labels { display:flex; justify-content:space-between; font-size:.85rem; padding:.7rem 0; border-bottom:1px solid var(--line); }

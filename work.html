@@ -9,6 +9,7 @@
   <script src="design.js?v=8"></script>
   <link rel="stylesheet" href="style.css?v=9">
   
+  <link rel="stylesheet" href="work.css?v=1">
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -22,34 +23,58 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <div class="wrap">
-<header class="intro">
-<p class="kicker">Работы</p>
-<h1>FORMA</h1>
-<p class="lead">Демонстрационный сайт для детейлинга с интерактивным осмотром покрытия и калькулятором.</p><div class="actions"><a class="button" href="cases/forma/index.html">Открыть сайт FORMA</a></div></header><figure class="case-figure"><img src="cases/forma/assets/hero.jpg" alt="Графитовый автомобиль под инспекционным светом"></figure>
-<details class="extra-frame" id="extra-frame">
-  <summary>На полях кейса</summary>
-  <figure class="case-figure">
-    <img src="cases/forma/assets/detail.jpg" alt="Полировальная машинка на кузове автомобиля" loading="lazy">
-    <figcaption>Запасной кадр из мастерской. В калькуляторе FORMA попробуйте собрать <a href="cases/forma/index.html#estimate">полный комплект услуг</a>.</figcaption>
-  </figure>
-</details>
-<section class="band">
-<h2>От осмотра к выбору услуги</h2>
-<div class="grid three">
-<article class="card">
-<h3>Задача</h3>
-<p>Объяснить, зачем нужна полировка, и дать ориентир по стоимости до записи.</p></article>
-<article class="card">
-<h3>Решение</h3>
-<p>Посетитель двигает источник света, сравнивает состояния покрытия и добавляет полировку в расчёт.</p></article>
-<article class="card">
-<h3>Что можно проверить</h3>
-<p>Выбор класса автомобиля, расшифровку суммы и локальный сценарий демо-записи.</p></article></div>
-<div class="actions"><a class="button secondary" href="cases/forma/index.html#inspection">Сразу к осмотру</a></div></section></div>
+    <article class="case-study">
+      <header class="case-cover" aria-labelledby="case-title">
+        <img src="cases/forma/assets/hero.jpg" width="1672" height="941" alt="Графитовый спорткар в свете ламп детейлинг-студии" fetchpriority="high">
+        <div class="wrap case-cover-content">
+          <p class="kicker">Работы / демонстрационный проект</p>
+          <h1 id="case-title">FORMA</h1>
+          <p class="case-subtitle">Цифровая мастерская детейлинга.</p>
+          <a class="button" href="cases/forma/index.html">Открыть сайт FORMA</a>
+        </div>
+      </header>
+      <div class="wrap">
+        <section class="case-overview" aria-labelledby="case-task">
+          <p class="kicker">Задача</p>
+          <div>
+            <h2 id="case-task">Показать, за что платит водитель.</h2>
+            <p>По фотографии автомобиля трудно понять, нужна ли полировка. Мы построили демонстрационный сайт вокруг двух решений: сначала посетитель изучает поверхность при боковом свете, затем собирает программу ухода и видит стоимость каждой услуги.</p>
+          </div>
+        </section>
+        <section class="case-chapter" aria-labelledby="case-inspection">
+          <figure class="case-screen">
+            <img src="assets/forma-paint.webp" width="1290" height="714" loading="lazy" alt="В модели лака вертикальная граница разделяет исходную поверхность со следами моек и полированную поверхность.">
+            <figcaption>Осмотр лака <span>Режим сравнения</span></figcaption>
+          </figure>
+          <div class="case-chapter-copy">
+            <h2 id="case-inspection">Свет проявляет дефект.</h2>
+            <p>Посетитель сам передвигает источник света. При одинаковом освещении легче заметить, как меняется отражение на полированной стороне. Прямо отсюда полировку можно добавить в расчёт.</p>
+            <a class="case-route" href="cases/forma/index.html#inspection">Провести светом по лаку</a>
+          </div>
+        </section>
+        <section class="case-chapter case-quote" aria-labelledby="case-calculator">
+          <figure class="case-screen">
+            <img src="assets/forma-quote.webp" width="904" height="746" loading="lazy" alt="Сводка калькулятора FORMA с выбранной полировкой и предварительной стоимостью.">
+            <figcaption>Сводка расчёта <span>Демо-прайс</span></figcaption>
+          </figure>
+          <div class="case-chapter-copy">
+            <h2 id="case-calculator">Цена складывается на глазах.</h2>
+            <p>Класс машины и состав программы определяют сумму. Каждая выбранная услуга появляется в сводке отдельной строкой. Результат переносится в демо-запись, которую можно проверить без отправки данных.</p>
+            <a class="case-route" href="cases/forma/index.html?service=polish#estimate">Изменить расчёт полировки</a>
+          </div>
+        </section>
+        <details class="extra-frame" id="extra-frame">
+          <summary>На полях кейса</summary>
+          <figure class="case-figure">
+            <img src="cases/forma/assets/detail.jpg" alt="Полировальная машинка на кузове автомобиля" loading="lazy">
+            <figcaption>Визуализация концепта. В FORMA можно собрать <a href="cases/forma/index.html#estimate">полный комплект услуг</a>.</figcaption>
+          </figure>
+        </details>
+      </div>
+    </article>
     <section class="footer-cta">
-<div class="wrap">
-<h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
+      <div class="wrap"><h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div>
+    </section>
   </main>
   <footer class="wrap site-footer"><a class="brand" href="index.html">ALT<span>.WEB</span></a><a href="https://t.me/contessionss">Telegram</a></footer>
 </body>

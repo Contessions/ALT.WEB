@@ -6,11 +6,11 @@
   <meta name="theme-color" content="#10141a">
   <meta name="description" content="Демонстрационный проект ALT Web. Подбор детейлинга, предварительный расчёт и пример заявки.">
   <title>FORMA — студия детейлинга · ALT Web</title>
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <script defer src="../../site-module.js"></script>
   <script defer src="catalog.js?v=3"></script>
-  <script defer src="app.js?v=5"></script>
-  <script defer src="inspection.js?v=6"></script>
+  <script defer src="app.js?v=7"></script>
+  <script defer src="inspection.js?v=7"></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">К содержанию</a>
@@ -40,14 +40,14 @@
         <div class="inspection-copy">
           <p class="eyebrow"><span></span> Интерактивный осмотр</p>
           <h2 id="inspection-title">Лак под светом.</h2>
-          <p class="intro">Проведите светом по образцу. Тонкие следы моек проявляются в блике. В режиме «Сравнить» двигайте границу между исходным и отполированным лаком.</p>
+          <p class="intro">Подвиньте границу на кузове: слева видны следы моек, справа — лак после полировки. Ползунок света меняет угол осмотра.</p>
           <a id="pick-polish" href="#estimate" class="secondary">Добавить полировку в расчёт</a>
         </div>
         <div class="inspection-console">
           <fieldset class="inspection-modes"><legend>Состояние лака</legend>
-            <label><input type="radio" name="finish" value="worn" checked> До</label>
+            <label><input type="radio" name="finish" value="worn"> До</label>
             <label><input type="radio" name="finish" value="corrected"> После</label>
-            <label><input type="radio" name="finish" value="compare"> Сравнить</label>
+            <label><input type="radio" name="finish" value="compare" checked> Сравнить</label>
           </fieldset>
           <div class="paint-stage">
             <canvas id="paint" width="720" height="400" role="img" aria-label="Симуляция отражений света и тонких царапин на тёмном автомобильном лаке">Сравнение фактур автомобильного лака.</canvas>
@@ -98,6 +98,7 @@
             <p id="hint">Отметьте хотя бы одну услугу.</p>
             <p id="full-program-note" class="full-program-note" hidden>Полный цикл собран. В мастерской такой список называют «ключи сюда, кофе себе».</p>
             <button type="button" id="continue" class="primary" disabled>Перейти к демо-записи</button>
+            <button type="button" class="quote-download" id="download-quote" hidden>Скачать расчёт (.txt)</button>
           </aside>
         </div>
         <a class="mobile-total" href="#estimate-summary" hidden>Ваш расчёт <strong id="mobile-price"></strong></a>
