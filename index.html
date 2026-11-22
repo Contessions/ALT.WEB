@@ -3,78 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f4ef">
-  <meta name="description" content="ALT Web — веб-студия Антона и Арсения. Сайты услуг, калькуляторы и интерактивные демонстрации. Посмотрите кейс FORMA.">
-  <title>ALT Web — дизайн и разработка сайтов</title>
-  <script src="design.js"></script>
+  <meta name="theme-color" content="#111613">
+  <meta name="description" content="Дизайн и разработка сайтов — ALT Web, дизайн и разработка сайтов для бизнеса.">
+  <title>Дизайн и разработка сайтов — ALT Web</title>
   <link rel="stylesheet" href="style.css">
+  <script src="brief.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
-  <header class="wrap site-header" id="home">
-    <a class="brand" href="#home" aria-label="ALT Web, в начало">ALT<span>.WEB</span></a>
-    <nav aria-label="Основная навигация">
-      <a href="#portfolio">Работы</a>
-      <a href="#services">Услуги</a>
-      <a href="#faq">Вопросы</a>
-      <a class="nav-contact" href="#contacts">Контакты <span aria-hidden="true">↘</span></a>
-    </nav>
+  <header class="wrap site-header">
+    <a class="brand" href="index.html" aria-label="ALT Web, главная">ALT<span>.WEB</span></a>
+    <nav aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
   </header>
   <main id="main" tabindex="-1">
-    <nav class="wrap design-picker" aria-label="Варианты оформления">
-      <span>Оформление</span>
-      <ul>
-        <li><a href="?design=studio" data-preview="studio" aria-current="true">Студия</a></li>
-        <li><a href="?design=night" data-preview="night">Тёмный</a></li>
-        <li><a href="?design=gallery" data-preview="gallery">Галерея</a></li>
-      </ul>
-    </nav>
-    <section class="wrap hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="kicker">Дизайн и разработка</p>
-        <h1 id="hero-title">Сайты для бизнеса<span>.</span></h1>
-        <p class="lead">Помогаем показать услугу в действии. Посетитель видит результат, подбирает вариант под себя и понимает, с чем обратиться.</p>
-        <div class="hero-actions">
-          <a class="button" href="#contacts">Обсудить проект <span aria-hidden="true">↗</span></a>
-          <a class="text-action" href="#portfolio">Смотреть работу <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-      <article class="feature" id="portfolio" aria-labelledby="case-title">
-        <div class="feature-head"><span>Портфолио</span><span>Демонстрационный кейс</span></div>
-        <a class="feature-link" href="cases/forma/index.html" aria-labelledby="case-title case-action">
-          <img src="cases/forma/assets/hero.jpg" alt="Графитовый автомобиль под инспекционным светом" fetchpriority="high">
-          <div class="caption">
-            <div><p>Детейлинг</p><h2 id="case-title">FORMA</h2></div>
-            <span id="case-action">Открыть кейс <span aria-hidden="true">↗</span></span>
-          </div>
-        </a>
-        <p class="case-note">Осмотр лака под движущимся светом, подбор программы и расчёт стоимости для своего автомобиля.</p>
-      </article>
-    </section>
-    <section id="services" class="band wrap">
-      <h2>Что мы делаем</h2>
-      <div class="service-list">
-        <article><h3>Лендинги</h3><p>Собираем на одной странице предложение, примеры и понятный путь к обращению.</p></article>
-        <article><h3>Сайты-визитки</h3><p>Знакомим с компанией, её услугами и командой. Помогаем быстро найти контакты.</p></article>
-        <article><h3>Интерактивные элементы</h3><p>Проектируем калькуляторы и формы под правила вашей услуги.</p></article>
-        <article><h3>Telegram-боты</h3><p>Автоматизируем повторяющиеся шаги клиента и команды в мессенджере.</p></article>
-      </div>
-    </section>
-    <section id="faq" class="band wrap">
-      <h2>Частые вопросы</h2>
-      <div class="answers">
-        <details><summary>Сколько времени занимает разработка?</summary><p>Срок зависит от согласованного объёма работ.</p></details>
-        <details><summary>Будет ли сайт работать на телефоне?</summary><p>Адаптивная версия входит в наши проекты.</p></details>
-        <details><summary>Можно ли вносить правки после создания проекта?</summary><p>В стоимость проекта включены два раунда согласованных правок.</p></details>
-      </div>
-    </section>
-    <section id="contacts" class="contact">
-      <div class="wrap contact-inner">
-        <div><h2>Обсудим ваш проект<span>?</span></h2><p>Расскажите, чем занимается ваш бизнес и что посетитель должен сделать на сайте.</p></div>
-        <a class="button" href="https://t.me/contessionss" target="_blank" rel="noopener noreferrer">Написать в Telegram <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+    <section class="wrap hero" id="home">
+<div>
+<p class="kicker">ALT WEB · веб-студия</p>
+<h1>Сайты, где услуги <em>понятны.</em></h1>
+<p class="lead">Проектируем и разрабатываем сайты для бизнеса. Помогаем посетителю разобраться в предложении, сравнить варианты и обратиться с конкретной задачей.</p>
+<div class="actions"><a class="button" href="services.html">Посмотреть услуги</a><a class="button secondary" href="work.html">Открыть работы</a></div></div><form class="brief" action="contact.html">
+<p class="kicker">Мини-бриф</p>
+<h2>Что должен делать ваш сайт?</h2><fieldset><legend>Выберите основную задачу</legend><label><input type="radio" name="goal" value="explain" checked> Объяснять одну услугу</label><label><input type="radio" name="goal" value="compare"> Помогать выбрать из нескольких услуг</label><label><input type="radio" name="goal" value="estimate"> Рассчитывать стоимость</label></fieldset>
+<div class="recommendation" aria-live="polite"><strong id="recommendation-title">Лендинг</strong>
+<p id="recommendation-copy">Одна страница с предложением, ответами на вопросы и кнопкой обращения.</p></div><button class="button" type="submit">Подготовить обращение</button></form></section>
+<section class="wrap band" id="services">
+<div class="section-head">
+<p class="kicker">Услуги</p>
+<h2>Подберём формат под задачу</h2></div>
+<div class="grid">
+<article class="card">
+<h3>Лендинг</h3>
+<p>Для одной услуги, запуска или рекламной кампании.</p><a href="services.html#landing">Подробнее</a></article>
+<article class="card">
+<h3>Сайт компании</h3>
+<p>Для бизнеса с несколькими услугами и разными аудиториями.</p><a href="services.html#site">Подробнее</a></article>
+<article class="card">
+<h3>Интерактивный модуль</h3>
+<p>Для услуги, которую проще показать в действии.</p><a href="services.html#interactive">Подробнее</a></article>
+<article class="card">
+<h3>Telegram-бот</h3>
+<p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p><a href="services.html#telegram">Подробнее</a></article></div></section>
+<section class="wrap feature" id="portfolio"><a href="work.html"><img src="cases/forma/assets/hero.jpg" alt="Графитовый автомобиль под инспекционным светом" loading="lazy"></a>
+<div>
+<p class="kicker">Демонстрационный кейс</p>
+<h2>FORMA</h2>
+<p>Подвижный свет показывает следы моек на лаке. Из осмотра можно сразу перейти к расчёту полировки для своего класса авто.</p><a class="button secondary" href="work.html">Как устроен кейс</a></div></section>
+<section class="wrap band">
+<div class="section-head">
+<p class="kicker">Работа над проектом</p>
+<h2>От цели к запуску</h2></div>
+<div class="grid three">
+<article class="card">
+<h3>Структура</h3>
+<p>Определяем, что посетитель должен понять и сделать.</p></article>
+<article class="card">
+<h3>Дизайн и разработка</h3>
+<p>Собираем страницы и проверяем сценарий на телефоне и компьютере.</p></article>
+<article class="card">
+<h3>Передача</h3>
+<p>Передаём исходники и объясняем, как менять контент.</p></article></div>
+<p><a class="button secondary" href="process.html">Посмотреть этапы</a></p></section>
+    <section class="footer-cta">
+<div class="wrap">
+<h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
   </main>
-  <footer class="wrap site-footer"><a href="#home" class="brand" aria-label="ALT Web, в начало">ALT<span>.WEB</span></a><p>Веб-студия · 2026</p></footer>
+  <footer class="wrap site-footer"><a class="brand" href="index.html">ALT<span>.WEB</span></a><a href="https://t.me/contessionss">Telegram</a></footer>
 </body>
 </html>
