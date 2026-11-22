@@ -1,81 +1,33 @@
 'use strict';
 
-const themes = { night: '#111613', studio: '#f5f4ef' };
 const themeKey = 'alt-web-theme';
-
-function preferredTheme() {
+function readTheme() {
   const requested = new URLSearchParams(location.search).get('design');
-  if (requested !== null) return Object.hasOwn(themes, requested) ? requested : 'night';
-  try {
-    const saved = localStorage.getItem(themeKey);
-    if (Object.hasOwn(themes, saved)) return saved;
-  } catch {
-    // File previews and private browsing can disable storage.
-  }
-  return 'night';
+  if (requested) return requested === 'studio' ? 'studio' : 'night';
+  try { return localStorage.getItem(themeKey) === 'studio' ? 'studio' : 'night'; }
+  catch { return 'night'; }
 }
-
-function showTheme(theme) {
+function applyTheme(theme) {
+  const light = theme === 'studio';
   document.documentElement.dataset.design = theme;
-  document.querySelector('meta[name="theme-color"]').content = themes[theme];
-  document.querySelectorAll('[data-preview]').forEach(link => {
-    if (link.dataset.preview === theme) link.setAttribute('aria-current', 'true');
-    else link.removeAttribute('aria-current');
-    const url = new URL(location.href);
-    url.searchParams.set('design', link.dataset.preview);
-    link.href = url.href;
-  });
-}
-
-function syncTheme() {
-  const theme = preferredTheme();
-  showTheme(theme);
-  try {
-    localStorage.setItem(themeKey, theme);
-  } catch {
-    // The theme still works for the current page.
+  document.querySelector('meta[name="theme-color"]').content = light ? '#f2f4f8' : '#0b0d11';
+  const toggle = document.querySelector('.theme-toggle');
+  if (toggle) {
+    toggle.hidden = false;
+    toggle.setAttribute('aria-label', light ? 'Включить тёмную тему' : 'Включить светлую тему');
+    toggle.firstElementChild.textContent = light ? '☾' : '☀';
   }
+  try { localStorage.setItem(themeKey, theme); } catch { /* Storage is optional. */ }
 }
-
-syncTheme();
-window.addEventListener('pageshow', syncTheme);
-window.addEventListener('popstate', syncTheme);
-
+applyTheme(readTheme());
+window.addEventListener('pageshow', () => applyTheme(readTheme()));
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('article.feature#portfolio')) {
-    document.querySelectorAll('.site-header nav a[href="#portfolio"], .hero .text-action[href="#portfolio"]')
-      .forEach(link => { link.href = 'work.html'; });
-  }
-
-  const picker = document.querySelector('.design-picker');
-  if (!picker) return;
-  const trigger = picker.querySelector('summary');
-  showTheme(preferredTheme());
-
-  picker.addEventListener('click', event => {
-    const link = event.target.closest('[data-preview]');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    try {
-      history.replaceState(history.state, '', link.href);
-      syncTheme();
-    } catch {
-      // Some browsers restrict history changes on file URLs.
-      location.assign(link.href);
-    }
-    picker.open = false;
-    trigger.focus();
-  });
-  document.addEventListener('click', event => {
-    if (picker.open && !picker.contains(event.target)) picker.open = false;
-  });
-  picker.addEventListener('focusout', event => {
-    if (event.relatedTarget && !picker.contains(event.relatedTarget)) picker.open = false;
-  });
-  picker.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && picker.open) {
-      picker.open = false;
-      trigger.focus();
-    }
+  applyTheme(readTheme());
+  document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.design === 'night' ? 'studio' : 'night';
+    const url = new URL(location.href);
+    url.searchParams.set('design', theme);
+    try { history.replaceState(history.state, '', url); } catch { /* Local previews may restrict history. */ }
+    applyTheme(theme);
   });
 });

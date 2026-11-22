@@ -6,40 +6,63 @@
   <meta name="theme-color" content="#111613">
   <meta name="description" content="Контакты — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Контакты — ALT Web</title>
-  <script src="design.js?v=6"></script>
-  <link rel="stylesheet" href="style.css?v=6">
+  <script src="design.js?v=7"></script>
+  <link rel="stylesheet" href="style.css?v=7">
   <script src="cases/forma/catalog.js?v=3" defer></script>
-  <script src="brief.js?v=2" defer></script>
+  <link rel="stylesheet" href="contact.css?v=1">
+  <script src="brief.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
   <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg" width="150" height="36" alt=""></a>
+    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
     <nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html" aria-current="page">Контакты</a></nav>
-    <details class="design-picker">
-      <summary aria-label="Оформление" title="Оформление"><span class="theme-icon" aria-hidden="true"></span></summary>
-      <ul aria-label="Варианты оформления">
-        <li><a href="?design=night" data-preview="night" aria-current="true">Тёмный</a></li>
-        <li><a href="?design=studio" data-preview="studio">Светлый</a></li>
-      </ul>
-    </details>
+    <div class="header-tools">
+      <a class="header-write" href="https://t.me/contessionss">Написать</a>
+      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><span aria-hidden="true">☀</span></button>
+    </div>
   </header>
-  <main id="main" tabindex="-1">
-    <div class="wrap">
-<header class="intro">
-<p class="kicker">Контакты</p>
-<h1>Обсудим ваш проект</h1>
-<p class="lead">Напишите нам в Telegram. Чтобы начать, достаточно пары предложений о бизнесе и о том, что посетитель должен сделать на сайте.</p></header>
-<section class="contact-layout">
-<div class="card">
-<h2>Что написать</h2><ul>
-<li>Чем занимается ваш бизнес.</li>
-<li>Какую задачу должен решить сайт.</li>
-<li>Есть ли сайт или материалы для старта.</li></ul><a class="button" href="https://t.me/contessionss">Написать в Telegram</a></div>
-<div class="card" id="brief-result">
-<h2>Черновик для обращения</h2><label for="brief-text">Дополните своими деталями</label><textarea id="brief-text" rows="6">Здравствуйте! Хочу обсудить сайт для моего бизнеса.</textarea><button class="button secondary" id="copy-brief" type="button" hidden>Скопировать черновик</button>
-<p id="copy-status" role="status"></p></div></section></div>
-    
+  <main class="wrap contact-page" id="main" tabindex="-1">
+    <section class="contact-story" aria-labelledby="contact-title">
+      <p class="kicker">Контакты</p>
+      <h1 id="contact-title">Обсудим<br>ваш проект<span aria-hidden="true">.</span></h1>
+      <p class="contact-lead">Расскажите, чем занимается ваш бизнес и что должен уметь сайт. Вместе подберём формат.</p>
+      <a class="contact-channel" href="https://t.me/contessionss">
+        <span><small>Написать Антону в Telegram</small><strong>@contessionss</strong></span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20 20 4M5 4h15v15"/></svg>
+      </a>
+    </section>
+    <section class="contact-editor" id="brief-result" aria-labelledby="draft-title">
+      <h2 id="draft-title">Коротко о проекте</h2>
+      <p class="draft-help">Подготовьте сообщение здесь и отправьте его в Telegram.</p>
+      <form id="brief-builder" hidden>
+        <label for="brief-business">Чем занимается ваш бизнес?</label>
+        <input id="brief-business" placeholder="Например, студия детейлинга">
+        <label for="brief-goal">Что должен делать сайт?</label>
+        <select id="brief-goal">
+          <option value="">Пока хочу обсудить</option>
+          <option value="explain">Представлять услугу</option>
+          <option value="compare">Помогать выбирать услуги</option>
+          <option value="estimate">Рассчитывать стоимость</option>
+        </select>
+        <label for="brief-details">Подробности <span>по желанию</span></label>
+        <textarea id="brief-details" rows="3" placeholder="Что уже есть и какой результат нужен?"></textarea>
+        <button class="button" type="submit">Подготовить текст <span aria-hidden="true">→</span></button>
+      </form>
+      <div id="draft-preview">
+        <label for="brief-text">Текст для Telegram</label>
+        <textarea id="brief-text" rows="7">Здравствуйте! Хочу обсудить сайт.
+
+Наш бизнес:
+Задача сайта:
+Материалы для старта:</textarea>
+        <div class="draft-actions">
+          <button class="button" id="copy-brief" type="button" hidden>Скопировать текст</button>
+          <button class="draft-edit" id="edit-fields" type="button" hidden>К вопросам</button>
+        </div>
+        <p id="copy-status" role="status"></p>
+      </div>
+    </section>
   </main>
   <footer class="wrap site-footer"><a class="brand" href="index.html">ALT<span>.WEB</span></a><a href="https://t.me/contessionss">Telegram</a></footer>
 </body>

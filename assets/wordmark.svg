@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="36" viewBox="0 0 150 36">
   <title>ALT Web</title>
   <style>
-    :root { --ink: #1b211e; --signal: #365e25; }
+    :root { --ink: #11151e; --signal: #1544c8; }
     @media (prefers-color-scheme: dark) {
-      :root { --ink: #f3f5f1; --signal: #c6f596; }
+      :root { --ink: #f6f7fb; --signal: #8babff; }
     }
     .name { fill: var(--ink); }
     .signal { fill: var(--signal); }

@@ -26,7 +26,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
       if (!grain) return;
       grain.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       for (let i = scratchCount * 6; i < sample.length; i += 3) {
-        grain.fillStyle = 'rgba(216,233,211,' + sample[i + 2] * .17 + ')';
+        grain.fillStyle = 'rgba(207,220,240,' + sample[i + 2] * .17 + ')';
         grain.fillRect(sample[i] * width, sample[i + 1] * height, 1, .7);
       }
     }
@@ -51,17 +51,17 @@ if (typeof siteModule !== 'undefined' && siteModule) {
 
     // Изогнутая панель: широкое отражение стены и узкая линия канта.
     const metal = context.createLinearGradient(0, 0, width * .22, height);
-    [[0,'#07100e'],[.2,'#243632'],[.32,'#3c534b'],[.39,'#1d302a'],
-      [.51,'#0e1917'],[.68,'#273831'],[.69,'#53645b'],[.715,'#101e1a'],[1,'#060d0c']]
+    [[0,'#08111c'],[.2,'#263443'],[.32,'#48596c'],[.39,'#202e3c'],
+      [.51,'#101924'],[.68,'#293644'],[.69,'#596775'],[.715,'#111c29'],[1,'#080e16']]
       .forEach(([stop,color]) => metal.addColorStop(stop,color));
     context.fillStyle = metal;
     context.fillRect(0, 0, width, height);
     const radius = Math.max(width * .39, height * .6);
     const glow = context.createRadialGradient(lampX,lampY,0,lampX,lampY,radius);
-    glow.addColorStop(0, corrected ? '#eef6e66e' : '#f7ebceaa');
-    glow.addColorStop(.16, corrected ? '#c8e2d343' : '#e1dfc96c');
-    glow.addColorStop(.55,'#adc0aa1c');
-    glow.addColorStop(1,'#c7dbb900');
+    glow.addColorStop(0, corrected ? '#e6f0ff6e' : '#edf2faaa');
+    glow.addColorStop(.16, corrected ? '#c1d7ef43' : '#d9e4f06c');
+    glow.addColorStop(.55,'#aec2d81c');
+    glow.addColorStop(1,'#c5d7ee00');
     context.fillStyle = glow;
     context.fillRect(0,0,width,height);
     drawGrain(context, width, height, pixelRatio);
@@ -70,9 +70,9 @@ if (typeof siteModule !== 'undefined' && siteModule) {
     context.rotate(-.38);
     const beamLength = height * .47;
     for (const offset of [-5, 5]) {
-      context.shadowColor = '#e5f9eb';
+      context.shadowColor = '#e6f2ff';
       context.shadowBlur = corrected ? 7 : 15;
-      context.strokeStyle = '#e3f2e7';
+      context.strokeStyle = '#e4efff';
       context.lineWidth = corrected ? 2.5 : 3.4;
       context.beginPath();
       context.moveTo(offset,-beamLength * .5);
@@ -89,7 +89,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
       const angle = sample[i + 3];
       const alpha = siteModule.scratch_alpha((x - lampX) / (radius * 1.15), (y - lampY) / radius, sample[i + 5], Number(corrected));
       if (!alpha) continue;
-      context.strokeStyle = 'rgba(242,237,219,' + alpha + ')';
+      context.strokeStyle = 'rgba(231,240,255,' + alpha + ')';
       context.beginPath();
       context.arc(x, y, sample[i + 2] * height, angle, angle + sample[i + 4]);
       context.stroke();

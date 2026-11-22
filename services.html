@@ -6,22 +6,19 @@
   <meta name="theme-color" content="#111613">
   <meta name="description" content="Услуги — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Услуги — ALT Web</title>
-  <script src="design.js?v=6"></script>
-  <link rel="stylesheet" href="style.css?v=6">
+  <script src="design.js?v=7"></script>
+  <link rel="stylesheet" href="style.css?v=7">
   <script src="bot-demo.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
   <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg" width="150" height="36" alt=""></a>
+    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
     <nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="services.html" aria-current="page">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
-    <details class="design-picker">
-      <summary aria-label="Оформление" title="Оформление"><span class="theme-icon" aria-hidden="true"></span></summary>
-      <ul aria-label="Варианты оформления">
-        <li><a href="?design=night" data-preview="night" aria-current="true">Тёмный</a></li>
-        <li><a href="?design=studio" data-preview="studio">Светлый</a></li>
-      </ul>
-    </details>
+    <div class="header-tools">
+      <a class="header-write" href="https://t.me/contessionss">Написать</a>
+      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><span aria-hidden="true">☀</span></button>
+    </div>
   </header>
   <main id="main" tabindex="-1">
     <div class="wrap">
@@ -46,10 +43,7 @@
     <p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
     <p><strong>Что входит</strong> Страницы услуг, кейсы, FAQ и контакты.</p>
     <a class="service-example" href="index.html">
-      <div class="example-visual example-site" aria-hidden="true">
-        <span>ALT<span>.WEB</span></span>
-        <div>Услуги <span>Работы</span> Контакты</div>
-      </div>
+      <div class="example-visual example-photo"><img src="assets/studio-pages.webp" alt="" loading="lazy" width="1000" height="667"></div>
       <span class="example-caption"><strong>Многостраничный ALT.WEB</strong><span>На главную</span></span>
     </a>
   </article>
@@ -58,7 +52,7 @@
     <p>Для услуги, которую проще показать в действии.</p>
     <p><strong>Что входит</strong> Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p>
     <a class="service-example" href="cases/forma/index.html#estimate">
-      <div class="example-visual example-estimate" aria-hidden="true">
+      <div class="example-visual example-photo"><img src="assets/studio-controls.webp" alt="" loading="lazy" width="1000" height="667"></div><div class="example-visual example-estimate" aria-hidden="true">
         <span>Кроссовер</span>
         <div>Полировка кузова <strong>15 000 ₽</strong></div>
         <div>Химчистка салона <strong>10 000 ₽</strong></div>
@@ -71,7 +65,7 @@
     <h2>Telegram-бот</h2>
     <p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
     <p><strong>Что входит</strong> Сценарий диалога, проверка ввода и способ передать запрос команде.</p>
-    <div class="bot-demo">
+    <div class="bot-demo"><div class="example-visual example-photo"><img src="assets/studio-chat.webp" alt="" loading="lazy" width="1000" height="667"></div>
       <p class="bot-heading"><strong>Бот детейлинга</strong><span>Демо в браузере</span></p>
       <p class="bot-reply" id="bot-reply" role="status">Чем помочь? Выберите вопрос ниже.</p>
       <div class="bot-choices" id="bot-choices" hidden>
