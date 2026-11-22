@@ -449,3 +449,8 @@ html { scroll-padding-top: 5rem; }
 @media (prefers-reduced-motion:reduce) {
   .service-image img,.service-copy::after { transition: none; }
 }
+.header-call { display: grid; place-items: center; min-width: 44px; height: 44px; }
+@media (max-width: 400px) {
+  .site-header .brand img { width: 104px; height: auto; }
+  .header-tools { gap: .25rem; }
+}
