@@ -6,10 +6,11 @@
   <meta name="theme-color" content="#101312">
   <meta name="description" content="Демонстрационный проект ALT Web. Подбор детейлинга, предварительный расчёт и пример заявки.">
   <title>FORMA — студия детейлинга · ALT Web</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="prices.js"></script>
-  <script defer src="app.js"></script>
-  <script defer src="inspection.js"></script>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script defer src="../../site-module.js"></script>
+  <script defer src="catalog.js?v=3"></script>
+  <script defer src="app.js?v=2"></script>
+  <script defer src="inspection.js?v=2"></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">К содержанию</a>
@@ -52,6 +53,7 @@
             <input type="range" id="lamp" min="0" max="100" value="48">
           </div>
           <p class="inspection-note">Визуальная модель поверхности. Реальный результат зависит от глубины дефектов.</p>
+          <p class="inspection-note inspection-secret" id="inspection-secret" role="status" hidden>Контрольный кадр. Даже отполированный лак выдаёт себя под боковым светом.</p>
         </div>
       </div>
     </section>
@@ -67,6 +69,7 @@
         </dl>
       </div>
       <noscript>Для выбора услуг и расчёта стоимости включите JavaScript в браузере.</noscript>
+      <p id="catalog-unavailable" hidden>Не удалось загрузить калькулятор. Обновите страницу или откройте её в другом браузере.</p>
     </section>
     <section class="estimate-section" id="estimate" aria-labelledby="estimate-title">
       <div class="wrap section">
@@ -92,7 +95,7 @@
           <form id="booking">
             <label for="guest">Тестовое имя</label><input id="guest" required maxlength="60" placeholder="Например, Антон" autocomplete="off">
             <label for="period">Предпочтительное время</label>
-            <select id="period" required><option value="">Выберите период</option><option>Утро</option><option>День</option><option>Вечер</option></select>
+            <select id="period" required><option value="">Выберите период</option><option value="Утро">Утро</option><option value="День">День</option><option value="Вечер">Вечер</option></select>
             <p>Учебная форма работает только в этой вкладке. Используйте вымышленное имя.</p>
             <button class="primary">Проверить демо-запись</button>
           </form>

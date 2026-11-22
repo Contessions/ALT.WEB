@@ -2,15 +2,18 @@
 
 // The URL keeps each preview shareable and lets browser history switch designs.
 const designs = new Map([
-  ['studio', '#f5f4ef'],
-  ['night', '#111613'],
-  ['gallery', '#eedfca'],
+  ['studio', 0],
+  ['night', 1],
+  ['gallery', 2],
 ]);
 const requestedDesign = new URLSearchParams(window.location.search).get('design');
 const activeDesign = designs.has(requestedDesign) ? requestedDesign : 'night';
 
 document.documentElement.dataset.design = activeDesign;
-document.querySelector('meta[name="theme-color"]').content = designs.get(activeDesign);
+if (typeof siteModule !== 'undefined' && siteModule) {
+  const themeColor = siteModule.theme(designs.get(activeDesign)).toString(16).padStart(6, '0');
+  document.querySelector('meta[name="theme-color"]').content = '#' + themeColor;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Older copies of the home page still link to its embedded portfolio card.

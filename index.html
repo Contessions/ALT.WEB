@@ -6,9 +6,11 @@
   <meta name="theme-color" content="#111613">
   <meta name="description" content="Дизайн и разработка сайтов — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Дизайн и разработка сайтов — ALT Web</title>
-  <script src="design.js?v=2"></script>
-  <link rel="stylesheet" href="style.css?v=2">
-  <script src="brief.js" defer></script>
+  <script src="site-module.js"></script>
+  <script src="design.js?v=3"></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="cases/forma/catalog.js?v=3" defer></script>
+  <script src="brief.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -16,7 +18,7 @@
     <a class="brand" href="index.html" aria-label="ALT Web, главная">ALT<span>.WEB</span></a>
     <nav aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
     <details class="design-picker">
-      <summary>Оформление</summary>
+      <summary aria-label="Оформление" title="Оформление"><span class="theme-icon" aria-hidden="true"></span></summary>
       <ul aria-label="Варианты оформления">
         <li><a href="?design=night" data-preview="night" aria-current="true">Тёмный</a></li>
         <li><a href="?design=studio" data-preview="studio">Светлый</a></li>
@@ -76,6 +78,13 @@
 <div class="wrap">
 <h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
   </main>
-  <footer class="wrap site-footer"><a class="brand" href="index.html">ALT<span>.WEB</span></a><a href="https://t.me/contessionss">Telegram</a></footer>
+  <footer class="wrap site-footer">
+    <a class="brand" href="index.html">ALT<span>.WEB</span></a>
+    <details class="studio-note">
+      <summary>Веб-студия · 2026</summary>
+      <p>Заметка из мастерской. В FORMA после полировки отведите лампу до правого края.</p>
+    </details>
+    <a href="https://t.me/contessionss">Telegram</a>
+  </footer>
 </body>
 </html>

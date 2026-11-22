@@ -1,26 +1,27 @@
 'use strict';
 
-const options = {
-  explain: ['Лендинг', 'Одна страница с предложением, ответами на вопросы и кнопкой обращения.'],
-  compare: ['Сайт компании', 'Отдельные страницы услуг, примеры работ и общий путь к обращению.'],
-  estimate: ['Калькулятор или конфигуратор', 'Выбор параметров, прозрачный расчёт и сводка перед обращением.']
-};
+const briefFormats = typeof catalog === 'undefined' ? {} : (catalog.brief ?? {});
+
+function recommendation(goal) {
+  return Object.hasOwn(briefFormats, goal) ? briefFormats[goal] : undefined;
+}
 
 const brief = document.querySelector('.brief');
 if (brief) {
   brief.addEventListener('change', () => {
-    const selected = options[new FormData(brief).get('goal')];
-    document.getElementById('recommendation-title').textContent = selected[0];
-    document.getElementById('recommendation-copy').textContent = selected[1];
+    const selected = recommendation(new FormData(brief).get('goal'));
+    if (!selected) return;
+    document.getElementById('recommendation-title').textContent = selected.title;
+    document.getElementById('recommendation-copy').textContent = selected.description;
   });
 }
 
 const draft = document.getElementById('brief-text');
 if (draft) {
-  const goal = new URLSearchParams(location.search).get('goal');
-  if (Object.hasOwn(options, goal)) {
+  const choice = recommendation(new URLSearchParams(location.search).get('goal'));
+  if (choice) {
     draft.value = 'Здравствуйте! Хочу обсудить проект для моего бизнеса.\nПодходящий формат: ' +
-      options[goal][0] + '.\nЧем занимается бизнес: \nЧто должен делать сайт: ';
+      choice.title + '.\nЧем занимается бизнес: \nЧто должен делать сайт: ';
   }
 
   const copy = document.getElementById('copy-brief');

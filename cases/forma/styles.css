@@ -54,6 +54,7 @@ h2 { font-size: clamp(2.1rem,4.7vw,4.6rem); font-weight: 520; letter-spacing: -.
 .section-heading { justify-content: space-between; align-items: end; gap: 1rem; }
 .section-heading p,.intro,.program p,.booking p,.summary p,dd,.footer p { color: var(--muted); }
 .programs { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; margin-top: 2rem; }
+#catalog-unavailable { margin-top: 1rem; color: var(--muted); }
 .program { display: grid; align-content: start; gap: .75rem; border: 1px solid var(--line); background: var(--panel); padding: clamp(1rem,2vw,1.6rem); }
 h3 { font-size: clamp(1.35rem,2.1vw,2.3rem); font-weight: 550; letter-spacing: -.04em; }
 .program p { max-width: 35rem; }
@@ -138,6 +139,7 @@ dd { padding: .4rem 0 1rem; }
 #lamp { width: 100%; min-height: 44px; margin: 0; grid-column: 1 / -1; accent-color: var(--accent); cursor: pointer; }
 #lamp-value { font-variant-numeric: tabular-nums; color: var(--accent); }
 .inspection-note { padding: .3rem 1.15rem 1rem; font-size: .83rem; color: var(--muted); }
+.inspection-secret { color: var(--accent); }
 .mobile-total { display: none; }
 @media (max-width:760px) {
   .inspection-modes legend { width: 100%; margin: 0; }
