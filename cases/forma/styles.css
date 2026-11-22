@@ -335,3 +335,9 @@ dd { padding: .4rem 0 1rem; }
 .quote-download { display:block; width:fit-content; min-height:44px; margin:.25rem auto 0; padding:.4rem .6rem; border:0; background:transparent; color:var(--ink); font:inherit; font-size:.86rem; text-decoration:underline; text-underline-offset:.25em; cursor:pointer; }
 .quote-download:hover {color:var(--accent)}
 .quote-download[hidden] {display:none}
+.program {grid-template-rows:auto 1fr auto auto}
+.program-price,.option strong,.sum output,.mobile-total strong {font-variant-numeric:tabular-nums; white-space:nowrap}
+.program-price {font-size:clamp(1.4rem,2.4vw,2rem); letter-spacing:-.035em}
+.program a,.credit a,.footer a:not(.wordmark) {width:fit-content; display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.45rem .9rem; border:1px solid var(--line); text-decoration:none; color:var(--ink); background:var(--panel)}
+.program a:is(:hover,:focus-visible),.credit a:hover,.footer a:hover {border-color:var(--accent);color:var(--accent)}
+.credit a {font-weight:800;letter-spacing:-.045em}

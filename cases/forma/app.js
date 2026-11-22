@@ -36,9 +36,12 @@ if (typeof catalog !== 'undefined' && typeof siteModule !== 'undefined' && siteM
       const link = document.createElement('a');
       link.href = '#estimate';
       link.dataset.service = service.id;
-      link.textContent = 'От ' + currency.format(Math.min(...service.prices));
-      link.setAttribute('aria-label', 'Рассчитать: ' + service.name + ', ' + link.textContent);
-      row.append(title, description, link);
+      const startingPrice = document.createElement('strong');
+      startingPrice.className = 'program-price';
+      startingPrice.textContent = 'от ' + currency.format(Math.min(...service.prices));
+      link.textContent = 'Добавить в расчёт';
+      link.setAttribute('aria-label', 'Рассчитать: ' + service.name + ', ' + startingPrice.textContent);
+      row.append(title, description, startingPrice, link);
       byId('programs').append(row);
 
       const label = document.createElement('label');

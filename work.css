@@ -74,3 +74,4 @@
   .case-cover > img { object-position:63% 42%; }
   .case-cover::after { background:linear-gradient(0deg,#080b0ff2,#080b0db5 35%,transparent 76%); }
 }
+.case-route.button { color:var(--foreground); text-decoration:none; } .case-route.button:is(:hover,:focus-visible) { color:var(--background); }
