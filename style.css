@@ -47,7 +47,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
   align-items: center;
-  gap: clamp(2rem, 6vw, 6rem);
+  gap: clamp(1.25rem, 5.5vw, 6rem);
   padding-block: clamp(2rem, 5vw, 5rem) clamp(3rem, 7vw, 7rem);
 }
 h1, h2, h3, p { margin-top: 0; }
@@ -111,23 +111,6 @@ details[open] summary::after { rotate: 225deg; }
 .site-footer { padding-block: 1.45rem; }
 .site-footer p { margin: 0; color: var(--soft); }
 
-@media (max-width: 760px) {
-  .hero, .band { grid-template-columns: 1fr; }
-  .hero { gap: 2rem; }
-  .feature img { aspect-ratio: 1.45; }
-}
-
-@media (max-width: 460px) {
-  .site-header { flex-wrap: wrap; gap: .35rem; }
-  .site-header nav { width: 100%; justify-content: space-between; gap: .3rem; }
-  .site-header nav a { font-size: .9rem; }
-  .nav-contact { padding-inline: .45rem; }
-  .service-list { grid-template-columns: 1fr; }
-  .feature img { aspect-ratio: 1.12; }
-  .caption { gap: .6rem; }
-  .site-footer p { font-size: .875rem; }
-}
-
 /* All previews share the same content and adapt the grid to their own composition. */
 [data-design="night"] {
   color-scheme: dark;
@@ -187,18 +170,38 @@ details[open] summary::after { rotate: 225deg; }
 [data-design="gallery"] .contact .button:hover { background: white; }
 [data-design="gallery"] .contact h2 span { color: #e9ac87; }
 
-@media (min-width: 761px) {
+@media (min-width: 641px) {
   [data-design="gallery"] .hero-copy { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
   [data-design="gallery"] .kicker { grid-column: 1 / -1; }
   [data-design="gallery"] h1 { grid-row: span 2; }
   [data-design="gallery"] .lead { margin-bottom: .75rem; }
 }
-@media (max-width: 760px) {
+
+/* Keep the case crops and service grids consistent when the main columns stack. */
+@media (max-width: 640px) {
+  .hero, .band { grid-template-columns: 1fr; }
   [data-design="night"] .hero { grid-template-columns: 1fr; }
-  [data-design="gallery"] .feature img { aspect-ratio: 1.45; }
+  [data-design="night"] .hero-copy { padding-bottom: 0; }
+  [data-design="gallery"] .feature img { aspect-ratio: 1.8; }
   [data-design="gallery"] .lead { margin-top: .85rem; }
+  .feature-head { gap: .45rem; }
+  .caption { gap: .6rem; }
 }
 @media (max-width: 460px) {
-  [data-design="night"] .feature img, [data-design="gallery"] .feature img { aspect-ratio: 1.12; }
-  [data-design="gallery"] .service-list article { grid-template-columns: 1fr; gap: .55rem; }
+  .site-header { flex-wrap: wrap; gap: .35rem; }
+  .site-header nav { width: 100%; justify-content: space-between; gap: .25rem; }
+  .site-header nav a { font-size: .9rem; }
+  .nav-contact { padding-inline: .45rem; }
+  .design-picker { margin-top: .45rem; }
+  .hero { padding-top: 1.5rem; }
+  .hero h1 { margin-bottom: 1rem; }
+  .hero .kicker, .hero .lead { margin-bottom: .85rem; }
+  .hero-actions { gap: .25rem .8rem; }
+  .hero-actions a { font-size: .9rem; }
+  .hero-actions .button { padding-inline: .75rem; }
+  .service-list article { padding: .75rem; }
+  .service-list h3 { font-size: 1.04rem; overflow-wrap: anywhere; }
+  .service-list p { font-size: .9rem; }
+  [data-design="gallery"] .service-list article { gap: .75rem; }
+  .site-footer p { font-size: .875rem; }
 }
