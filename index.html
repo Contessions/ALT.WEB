@@ -3,37 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
   <meta name="description" content="ALT Web — веб-студия Антона и Арсения. Сайты услуг, калькуляторы и интерактивные демонстрации. Посмотрите кейс FORMA.">
   <title>ALT Web — дизайн и разработка сайтов</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#home">К содержанию</a>
-  <header class="wrap">
-    <a class="brand" href="#home" aria-label="ALT Web, в начало">ALT<span>Web</span></a>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="wrap site-header" id="home">
+    <a class="brand" href="#home" aria-label="ALT Web, в начало">ALT<span>.WEB</span></a>
     <nav aria-label="Основная навигация">
-      <a href="#portfolio">Работы</a><a href="#services">Услуги</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#services">Услуги</a>
+      <a href="#faq">Вопросы</a>
+      <a class="nav-contact" href="#contacts">Контакты <span aria-hidden="true">↘</span></a>
     </nav>
   </header>
-  <main>
-    <section id="home" class="wrap hero">
+  <main id="main" tabindex="-1">
+    <section class="wrap hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="kicker">Дизайн и разработка</p>
-        <h1>Сайты для<br>бизнеса<span>.</span></h1>
+        <h1 id="hero-title">Сайты для<br>бизнеса<span>.</span></h1>
         <p class="lead">Помогаем показать услугу в действии. Посетитель видит результат, подбирает вариант под себя и понимает, с чем обратиться.</p>
-        <a class="button" href="#contacts">Обсудить проект</a>
+        <div class="hero-actions">
+          <a class="button" href="#contacts">Обсудить проект <span aria-hidden="true">↗</span></a>
+          <a class="text-action" href="#portfolio">Смотреть работу <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
       <article class="feature" id="portfolio" aria-labelledby="case-title">
         <div class="feature-head"><span>Портфолио</span><span>Демонстрационный кейс</span></div>
-        <a class="feature-link" href="cases/forma/index.html" aria-label="Открыть демонстрационный сайт FORMA">
-          <img src="cases/forma/assets/hero.jpg" alt="" fetchpriority="high">
-          <div class="caption"><div><p>Детейлинг</p><h2 id="case-title">FORMA</h2></div><span>Открыть кейс</span></div>
+        <a class="feature-link" href="cases/forma/index.html" aria-labelledby="case-title case-action">
+          <img src="cases/forma/assets/hero.jpg" alt="Графитовый автомобиль под инспекционным светом" fetchpriority="high">
+          <div class="caption">
+            <div><p>Детейлинг</p><h2 id="case-title">FORMA</h2></div>
+            <span id="case-action">Открыть кейс <span aria-hidden="true">↗</span></span>
+          </div>
         </a>
         <p class="case-note">Осмотр лака под движущимся светом, подбор программы и расчёт стоимости для своего автомобиля.</p>
       </article>
     </section>
     <section id="services" class="band wrap">
-      <div><p class="kicker">Студия</p><h2>Что мы делаем</h2></div>
+      <h2>Что мы делаем</h2>
       <div class="service-list">
         <article><h3>Лендинги</h3><p>Собираем на одной странице предложение, примеры и понятный путь к обращению.</p></article>
         <article><h3>Сайты-визитки</h3><p>Знакомим с компанией, её услугами и командой. Помогаем быстро найти контакты.</p></article>
@@ -42,7 +52,7 @@
       </div>
     </section>
     <section id="faq" class="band wrap">
-      <div><p class="kicker">До начала работ</p><h2>Частые вопросы</h2></div>
+      <h2>Частые вопросы</h2>
       <div class="answers">
         <details><summary>Сколько времени занимает разработка?</summary><p>Срок зависит от согласованного объёма работ.</p></details>
         <details><summary>Будет ли сайт работать на телефоне?</summary><p>Адаптивная версия входит в наши проекты.</p></details>
@@ -50,10 +60,12 @@
       </div>
     </section>
     <section id="contacts" class="contact">
-      <div class="wrap"><p class="kicker">Связаться со студией</p><h2>Обсудим ваш проект<span>?</span></h2><p>Расскажите, чем занимается ваш бизнес и что посетитель должен сделать на сайте.</p>
-      <a class="button" href="https://t.me/contessionss" target="_blank" rel="noopener noreferrer">Написать в Telegram</a></div>
+      <div class="wrap contact-inner">
+        <div><h2>Обсудим ваш проект<span>?</span></h2><p>Расскажите, чем занимается ваш бизнес и что посетитель должен сделать на сайте.</p></div>
+        <a class="button" href="https://t.me/contessionss" target="_blank" rel="noopener noreferrer">Написать в Telegram <span aria-hidden="true">↗</span></a>
+      </div>
     </section>
   </main>
-  <footer class="wrap"><a href="#home" class="brand">ALT<span>Web</span></a><p>Веб-студия · 2026</p></footer>
+  <footer class="wrap site-footer"><a href="#home" class="brand" aria-label="ALT Web, в начало">ALT<span>.WEB</span></a><p>Веб-студия · 2026</p></footer>
 </body>
 </html>
