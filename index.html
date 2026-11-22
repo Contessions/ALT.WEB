@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#111613">
   <meta name="description" content="Дизайн и разработка сайтов — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Дизайн и разработка сайтов — ALT Web</title>
+  <script src="design.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="brief.js" defer></script>
 </head>
@@ -14,6 +15,14 @@
   <header class="wrap site-header">
     <a class="brand" href="index.html" aria-label="ALT Web, главная">ALT<span>.WEB</span></a>
     <nav aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
+    <details class="design-picker">
+      <summary>Оформление</summary>
+      <ul aria-label="Варианты оформления">
+        <li><a href="?design=night" data-preview="night" aria-current="true">Тёмный</a></li>
+        <li><a href="?design=studio" data-preview="studio">Светлый</a></li>
+        <li><a href="?design=gallery" data-preview="gallery">Песочный</a></li>
+      </ul>
+    </details>
   </header>
   <main id="main" tabindex="-1">
     <section class="wrap hero" id="home">
