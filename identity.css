@@ -1,0 +1,18 @@
+.site-header .theme-toggle { background:transparent; border:0; border-radius:50%; color:var(--foreground); }
+.theme-toggle svg {display:block;overflow:visible}
+.theme-toggle .moon, [data-design="studio"] .theme-toggle .sun {display:none}
+[data-design="studio"] .theme-toggle .moon {display:block}
+.header-tools .header-write {position:relative;display:inline-flex;align-items:center;min-height:44px;gap:.35em;font-weight:650;letter-spacing:-.025em}
+.header-write svg {color:var(--accent);flex:none}
+.header-write::before {content:"";position:absolute;bottom:8px;left:0;right:1em;height:2px;background:var(--accent);transform:scaleX(.25);transform-origin:left}
+.studio-signature {font:650 .72rem/1.2 Consolas,monospace;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
+.site-footer {border-top:0;flex-wrap:wrap}
+@media(prefers-reduced-motion:no-preference){
+  .theme-toggle svg,.header-write svg,.header-write::before {transition:transform .28s cubic-bezier(.2,.75,.3,1)}
+  .theme-toggle:is(:hover,:focus-visible) svg {transform:rotate(25deg) scale(1.12)}
+  .header-write:is(:hover,:focus-visible) svg {transform:translate(2px,-2px) rotate(5deg)}
+  .header-write:is(:hover,:focus-visible)::before {transform:scaleX(1)}
+  .studio-signature {animation:signature-settle .7s ease-out}
+}
+@keyframes signature-settle {from{letter-spacing:.3em}to{letter-spacing:.19em}}
+@media(max-width:450px){.site-footer{display:grid;grid-template-columns:1fr auto}.studio-signature{grid-column:1;grid-row:2}.site-footer>.button{grid-column:2;grid-row:1/3}}

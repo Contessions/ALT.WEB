@@ -15,7 +15,6 @@ function applyTheme(theme) {
   if (toggle) {
     toggle.hidden = false;
     toggle.setAttribute('aria-label', light ? 'Включить тёмную тему' : 'Включить светлую тему');
-    toggle.firstElementChild.textContent = light ? '☾' : '☀';
   }
   try { localStorage.setItem(themeKey, theme); } catch { /* Storage is optional. */ }
 }

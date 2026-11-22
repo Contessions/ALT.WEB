@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#10141a">
   <meta name="description" content="Демонстрационный проект ALT Web. Подбор детейлинга, предварительный расчёт и пример заявки.">
   <title>FORMA — студия детейлинга · ALT Web</title>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script defer src="../../site-module.js"></script>
   <script defer src="catalog.js?v=3"></script>
   <script defer src="app.js?v=8"></script>
@@ -18,7 +18,10 @@
   <header class="compact-header">
     <div class="wrap header">
       <a class="wordmark" href="#top" aria-label="FORMA, главная">FORMA<span class="brand-slits" aria-hidden="true"><i></i><i></i><i></i></span></a>
-      <a class="nav-cta" href="../../contact.html">Связь с ALT Web</a>
+      <a class="nav-cta" href="../../contact.html">
+        <span>Связь с ALT Web</span>
+        <svg class="contact-glyph" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 4.5h14v9H8l-4 3v-3H3z"/><path class="contact-line" d="M6 8h8"/></svg>
+      </a>
     </div>
   </header>
   <nav class="wrap section-nav" aria-label="Разделы FORMA"><a href="#inspection">Осмотр лака</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#estimate">Расчёт</a></nav>
@@ -99,7 +102,10 @@
             <p id="hint">Отметьте хотя бы одну услугу.</p>
             <p id="full-program-note" class="full-program-note" hidden>Полный цикл собран. В мастерской такой список называют «ключи сюда, кофе себе».</p>
             <button type="button" id="continue" class="primary" disabled>Перейти к демо-записи</button>
-            <button type="button" class="quote-download" id="download-quote" hidden>Скачать расчёт (.txt)</button>
+            <button type="button" class="quote-download" id="download-quote" hidden>
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path class="download-arrow" d="M10 2v10m-4-4 4 4 4-4"/><path d="M3 13v4h14v-4"/></svg>
+              Скачать расчёт (.txt)
+            </button>
           </aside>
         </div>
         <a class="mobile-total" href="#estimate-summary" hidden>Ваш расчёт <strong id="mobile-price"></strong></a>
@@ -135,6 +141,14 @@
       </div>
     </section>
   </main>
-  <footer class="wrap footer"><a class="wordmark" href="#top">FORMA</a><a href="../../work.html">В портфолио ALT Web</a></footer>
+  <footer class="wrap footer footer-portal">
+    <a class="wordmark" href="#top">FORMA</a>
+    <a class="portfolio-gate" href="../../work.html">
+      <span class="gate-copy"><span>В портфолио</span><strong>ALT Web</strong></span>
+      <svg class="gate-mark" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+        <path d="M7 35 23 9"/><path d="m22 35 16-26"/><path d="m37 35 16-26"/>
+      </svg>
+    </a>
+  </footer>
 </body>
 </html>
