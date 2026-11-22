@@ -13,11 +13,29 @@ document.documentElement.dataset.design = activeDesign;
 document.querySelector('meta[name="theme-color"]').content = designs.get(activeDesign);
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-preview]').forEach((link) => {
-    if (link.dataset.preview === activeDesign) {
-      link.setAttribute('aria-current', 'true');
-    } else {
-      link.removeAttribute('aria-current');
+  const picker = document.querySelector('.design-picker');
+  const trigger = picker.querySelector('summary');
+  const links = picker.querySelectorAll('[data-preview]');
+
+  links.forEach((link) => {
+    if (link.dataset.preview === activeDesign) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  });
+
+  // Keep the native disclosure and close it when the user moves on.
+  document.addEventListener('click', (event) => {
+    if (picker.open && !picker.contains(event.target)) picker.open = false;
+  });
+
+  picker.addEventListener('focusout', (event) => {
+    if (event.relatedTarget && !picker.contains(event.relatedTarget)) picker.open = false;
+  });
+
+  picker.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && picker.open) {
+      event.preventDefault();
+      picker.open = false;
+      trigger.focus();
     }
   });
 });

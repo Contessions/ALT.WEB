@@ -19,16 +19,18 @@
       <a href="#faq">Вопросы</a>
       <a class="nav-contact" href="#contacts">Контакты</a>
     </nav>
-  </header>
-  <main id="main" tabindex="-1">
-    <nav class="wrap design-picker" aria-label="Варианты оформления">
-      <span>Оформление</span>
-      <ul>
+    <details class="design-picker">
+      <summary aria-label="Оформление" title="Оформление">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </summary>
+      <ul aria-label="Варианты оформления">
         <li><a href="?design=studio" data-preview="studio" aria-current="true">Студия</a></li>
         <li><a href="?design=night" data-preview="night">Тёмный</a></li>
         <li><a href="?design=gallery" data-preview="gallery">Галерея</a></li>
       </ul>
-    </nav>
+    </details>
+  </header>
+  <main id="main" tabindex="-1">
     <section class="wrap hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="kicker">Дизайн и разработка</p>
