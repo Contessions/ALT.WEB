@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#f5f4ef">
   <meta name="description" content="ALT Web — веб-студия Антона и Арсения. Сайты услуг, калькуляторы и интерактивные демонстрации. Посмотрите кейс FORMA.">
   <title>ALT Web — дизайн и разработка сайтов</title>
+  <script src="design.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,10 +21,18 @@
     </nav>
   </header>
   <main id="main" tabindex="-1">
+    <nav class="wrap design-picker" aria-label="Варианты оформления">
+      <span>Оформление</span>
+      <ul>
+        <li><a href="?design=studio" data-preview="studio" aria-current="true">Студия</a></li>
+        <li><a href="?design=night" data-preview="night">Тёмный</a></li>
+        <li><a href="?design=gallery" data-preview="gallery">Галерея</a></li>
+      </ul>
+    </nav>
     <section class="wrap hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="kicker">Дизайн и разработка</p>
-        <h1 id="hero-title">Сайты для<br>бизнеса<span>.</span></h1>
+        <h1 id="hero-title">Сайты для бизнеса<span>.</span></h1>
         <p class="lead">Помогаем показать услугу в действии. Посетитель видит результат, подбирает вариант под себя и понимает, с чем обратиться.</p>
         <div class="hero-actions">
           <a class="button" href="#contacts">Обсудить проект <span aria-hidden="true">↗</span></a>
