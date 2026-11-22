@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101312">
+  <meta name="description" content="Демонстрационный проект ALT Web. Подбор детейлинга, предварительный расчёт и пример заявки.">
+  <title>FORMA — студия детейлинга · ALT Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="prices.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="inspection.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="wrap header">
+    <a class="wordmark" href="#top" aria-label="FORMA, в начало">FORMA<span class="brand-slits" aria-hidden="true"></span></a>
+    <nav aria-label="Основная навигация"><a href="#inspection">Осмотр лака</a><a href="#services">Услуги</a><a href="#process">Процесс</a></nav>
+    <a class="nav-cta" href="#estimate">Рассчитать стоимость</a>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="assets/hero.jpg" alt="" fetchpriority="high">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Студия детейлинга</p>
+          <h1 id="hero-title">Чистая<br><em>форма.</em></h1>
+          <p class="lead">Полировка, защита кузова и уход за салоном. Подберите программу для своего автомобиля.</p>
+          <a class="primary" href="#estimate">Рассчитать стоимость</a>
+          <a class="hero-lab-link" href="#inspection">Осмотреть покрытие</a>
+        </div>
+        <p class="credit">Демонстрационный проект <b>ALT Web</b></p>
+      </div>
+    </section>
+    <section class="inspection-section" id="inspection" aria-labelledby="inspection-title">
+      <div class="wrap section inspection-grid">
+        <div class="inspection-copy">
+          <p class="eyebrow"><span></span> Интерактивный осмотр</p>
+          <h2 id="inspection-title">Лак под <br>светом.</h2>
+          <p class="intro">Проведите светом по образцу. Тонкие следы моек проявляются в блике. Сравните покрытие до и после полировки.</p>
+          <a id="pick-polish" href="#estimate" class="secondary">Добавить полировку в расчёт</a>
+        </div>
+        <div class="inspection-console">
+          <fieldset class="inspection-modes"><legend>Состояние лака</legend>
+            <label><input type="radio" name="finish" value="worn" checked> До полировки</label>
+            <label><input type="radio" name="finish" value="corrected"> После</label>
+          </fieldset>
+          <canvas id="paint" width="720" height="400" role="img" aria-label="Симуляция отражений света и тонких царапин на тёмном автомобильном лаке">Сравнение фактур автомобильного лака.</canvas>
+          <div class="inspection-light">
+            <label for="lamp">Положение света</label>
+            <output id="lamp-value" for="lamp">48%</output>
+            <input type="range" id="lamp" min="0" max="100" value="48">
+          </div>
+          <p class="inspection-note">Визуальная модель поверхности. Реальный результат зависит от глубины дефектов.</p>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section" id="services" aria-labelledby="services-title">
+      <div class="section-heading"><h2 id="services-title">Программы ухода</h2><p>Выберите одну услугу или соберите комплекс.</p></div>
+      <div id="programs" class="programs"></div>
+      <noscript>Для выбора услуг и расчёта стоимости включите JavaScript в браузере.</noscript>
+    </section>
+    <section class="estimate-section" id="estimate" aria-labelledby="estimate-title">
+      <div class="wrap section">
+        <h2 id="estimate-title">Рассчитайте стоимость</h2>
+        <p class="intro">Классы автомобилей и цены приведены для демонстрации. Итоговый объём работ в студии уточнили бы после осмотра.</p>
+        <div class="estimate-layout">
+          <div>
+            <fieldset><legend>Класс автомобиля</legend><div id="vehicles" class="choices"></div></fieldset>
+            <fieldset><legend>Состав программы</legend><div id="options"></div></fieldset>
+          </div>
+          <aside class="summary" id="estimate-summary" aria-label="Сводка расчёта">
+            <h3>Ваш расчёт</h3><p id="vehicle-label"></p>
+            <ul id="lines"></ul>
+            <div class="sum"><span>Предварительно</span><output id="total" aria-live="polite">0 ₽</output></div>
+            <p id="hint">Отметьте хотя бы одну услугу.</p>
+            <button type="button" id="continue" class="primary" disabled>Перейти к демо-записи</button>
+          </aside>
+        </div>
+        <a class="mobile-total" href="#estimate-summary" hidden>Ваш расчёт <strong id="mobile-price"></strong></a>
+        <section id="booking-section" class="booking" hidden aria-labelledby="booking-title">
+          <h3 id="booking-title" tabindex="-1">Демо-запись</h3>
+          <p id="review"></p>
+          <form id="booking">
+            <label for="guest">Тестовое имя</label><input id="guest" required maxlength="60" placeholder="Например, Антон" autocomplete="off">
+            <label for="period">Предпочтительное время</label>
+            <select id="period" required><option value="">Выберите период</option><option>Утро</option><option>День</option><option>Вечер</option></select>
+            <p>Учебная форма работает только в этой вкладке. Используйте вымышленное имя.</p>
+            <button class="primary">Проверить демо-запись</button>
+          </form>
+          <div id="receipt" tabindex="-1" hidden><h4>Демо-запись готова</h4><p id="receipt-text"></p><p>Данные не отправлены, время не забронировано.</p><button type="button" class="secondary" id="edit">Изменить заявку</button></div>
+        </section>
+      </div>
+    </section>
+    <section id="process" class="wrap section process">
+      <figure><img src="assets/detail.jpg" alt="Деталь автомобиля в направленном свете" loading="lazy"><figcaption>Иллюстрация процесса</figcaption></figure>
+      <div><h2>Как проходит<br>детейлинг</h2>
+        <dl><dt>Осмотр при направленном свете</dt><dd>Мастер оценивает состояние покрытия и отмечает участки, которым нужен уход.</dd>
+        <dt>Согласование работ</dt><dd>Владелец получает перечень операций, стоимость и срок до начала работ.</dd>
+        <dt>Уход и проверка</dt><dd>После обработки мастер осматривает поверхность при боковом свете и объясняет, как сохранить результат.</dd></dl>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><a class="wordmark" href="#top">FORMA</a><p>Демонстрационный кейс · ALT Web</p><a href="#top">Наверх</a></footer>
+</body>
+</html>

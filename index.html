@@ -1,100 +1,59 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Веб-студия — разработка сайтов</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="#home">Студия</a>
-        <a href="#services">Услуги</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-    </header>
-
-    <main>
-      <section id="home" class="hero">
-        <h1>Разрабатываем сайты для бизнеса</h1>
-        <p>Создаём адаптивные сайты, которые помогают представить услуги и получать обращения.</p>
-        <a href="#contacts" class="button"> Обсудить проект </a>
-      </section>
-
-      <section id="services">
-        <h2>Наши услуги</h2>
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Лендинги</h3>
-            <p>Одностраничные сайты для услуг.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Сайты-визитки</h3>
-            <p>Информация о компании и контакты.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Интерактивные элементы</h3>
-            <p>Калькуляторы и формы расчёта.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>ТГ-Боты</h3>
-            <p>Интегрированные боты для автоматизации процессов.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="portfolio">
-        <h2>Портфолио</h2>
-        <p>Наши демонстрационные проекты.</p>
-        <article>
-          <h3>Детейлинг</h3>
-          <p>Демонстрационный проект. В разработке.</p>
-        </article>
-        <article>
-          <h3>Мебель</h3>
-          <p>Демонстрационный проект. В разработке.</p>
-        </article>
-      </section>
-
-      <section id="faq">
-        <h2>Частые вопросы</h2>
-        <details>
-          <summary>Сколько времени занимает разработка?</summary>
-          <p>Срок зависит от согласованного объёма работ.</p>
-        </details>
-        <details>
-          <summary>Будет ли сайт работать на телефоне?</summary>
-          <p>Адаптивная версия входит в наши проекты.</p>
-        </details>
-        <details>
-          <summary>Можно ли вносить правки после создания проекта?</summary>
-          <p>В стоимость проекта включены два раунда согласованных правок.</p>
-        </details>
-      </section>
-
-      <section id="contacts">
-        <h2>Обсудим ваш проект</h2>
-        <p>Напишите нам, чтобы обсудить задачу и предварительную стоимость.</p>
-
-        <a
-          href="https://t.me/contessionss"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button"
-        >
-          Написать в Telegram
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ALT Web — веб-студия Антона и Арсения. Сайты услуг, калькуляторы и интерактивные демонстрации. Посмотрите кейс FORMA.">
+  <title>ALT Web — дизайн и разработка сайтов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#home">К содержанию</a>
+  <header class="wrap">
+    <a class="brand" href="#home" aria-label="ALT Web, в начало">ALT<span>Web</span></a>
+    <nav aria-label="Основная навигация">
+      <a href="#portfolio">Работы</a><a href="#services">Услуги</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="wrap hero">
+      <div class="hero-copy">
+        <p class="kicker">Дизайн и разработка</p>
+        <h1>Сайты для<br>бизнеса<span>.</span></h1>
+        <p class="lead">Помогаем показать услугу в действии. Посетитель видит результат, подбирает вариант под себя и понимает, с чем обратиться.</p>
+        <a class="button" href="#contacts">Обсудить проект</a>
+      </div>
+      <article class="feature" id="portfolio" aria-labelledby="case-title">
+        <div class="feature-head"><span>Портфолио</span><span>Демонстрационный кейс</span></div>
+        <a class="feature-link" href="cases/forma/index.html" aria-label="Открыть демонстрационный сайт FORMA">
+          <img src="cases/forma/assets/hero.jpg" alt="" fetchpriority="high">
+          <div class="caption"><div><p>Детейлинг</p><h2 id="case-title">FORMA</h2></div><span>Открыть кейс</span></div>
         </a>
-      </section>
-    </main>
-
-    <footer>
-      <p>Веб-студия — 2026</p>
-    </footer>
-  </body>
+        <p class="case-note">Осмотр лака под движущимся светом, подбор программы и расчёт стоимости для своего автомобиля.</p>
+      </article>
+    </section>
+    <section id="services" class="band wrap">
+      <div><p class="kicker">Студия</p><h2>Что мы делаем</h2></div>
+      <div class="service-list">
+        <article><h3>Лендинги</h3><p>Собираем на одной странице предложение, примеры и понятный путь к обращению.</p></article>
+        <article><h3>Сайты-визитки</h3><p>Знакомим с компанией, её услугами и командой. Помогаем быстро найти контакты.</p></article>
+        <article><h3>Интерактивные элементы</h3><p>Проектируем калькуляторы и формы под правила вашей услуги.</p></article>
+        <article><h3>Telegram-боты</h3><p>Автоматизируем повторяющиеся шаги клиента и команды в мессенджере.</p></article>
+      </div>
+    </section>
+    <section id="faq" class="band wrap">
+      <div><p class="kicker">До начала работ</p><h2>Частые вопросы</h2></div>
+      <div class="answers">
+        <details><summary>Сколько времени занимает разработка?</summary><p>Срок зависит от согласованного объёма работ.</p></details>
+        <details><summary>Будет ли сайт работать на телефоне?</summary><p>Адаптивная версия входит в наши проекты.</p></details>
+        <details><summary>Можно ли вносить правки после создания проекта?</summary><p>В стоимость проекта включены два раунда согласованных правок.</p></details>
+      </div>
+    </section>
+    <section id="contacts" class="contact">
+      <div class="wrap"><p class="kicker">Связаться со студией</p><h2>Обсудим ваш проект<span>?</span></h2><p>Расскажите, чем занимается ваш бизнес и что посетитель должен сделать на сайте.</p>
+      <a class="button" href="https://t.me/contessionss" target="_blank" rel="noopener noreferrer">Написать в Telegram</a></div>
+    </section>
+  </main>
+  <footer class="wrap"><a href="#home" class="brand">ALT<span>Web</span></a><p>Веб-студия · 2026</p></footer>
+</body>
 </html>
