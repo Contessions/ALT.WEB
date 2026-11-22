@@ -10,7 +10,7 @@ function readTheme() {
 function applyTheme(theme) {
   const light = theme === 'studio';
   document.documentElement.dataset.design = theme;
-  document.querySelector('meta[name="theme-color"]').content = light ? '#f2f4f8' : '#0b0d11';
+  document.querySelector('meta[name="theme-color"]').content = light ? '#f3f5fa' : '#0a0c10';
   const toggle = document.querySelector('.theme-toggle');
   if (toggle) {
     toggle.hidden = false;
