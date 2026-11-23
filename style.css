@@ -479,3 +479,25 @@ html { scroll-padding-top: 5rem; }
   .button,.button::before,.button::after,.format-thumb img,.sample-link,.sample-nav a,.bot-demo > a,.bot-choices button { transition:none; }
   .task-switch label:is(:hover,:focus-within) img,.button:is(:hover,:focus-visible)::after { transform:none; }
 }
+
+/* Navigation actions lead the eye along the direction of travel. */
+.button.secondary::before { display:none; }
+.button.secondary::after {
+  width:1.05rem; height:.85rem; border:0; transform:none;
+  background:currentColor;
+  clip-path:polygon(0 44%,74% 44%,47% 12%,57% 0,100% 50%,57% 100%,47% 88%,74% 56%,0 56%);
+}
+.format-label { position:relative; padding-inline-end:1.65rem; }
+.format-label::after {
+  content:""; position:absolute; right:.65rem; width:.45rem; height:.45rem;
+  border-radius:50%; background:currentColor; transform:scale(0);
+}
+.task-switch label:has(:checked) .format-label::after { transform:scale(1); }
+@media (prefers-reduced-motion:no-preference) {
+  .button.secondary:is(:hover,:focus-visible)::after { transform:translateX(3px); }
+  .format-label::after { transition:transform .25s cubic-bezier(.22,.9,.28,1.25); }
+  .bot-choices button:active { transform:translateY(2px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .button.secondary:is(:hover,:focus-visible)::after { transform:none; }
+}
