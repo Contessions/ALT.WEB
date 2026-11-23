@@ -6,10 +6,12 @@
   <meta name="theme-color" content="#0a0c10">
   <meta name="description" content="Контакты — ALT Web, дизайн и разработка сайтов для бизнеса.">
   <title>Контакты — ALT Web</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <script src="design.js?v=9"></script>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=15">
   <script src="cases/forma/catalog.js?v=3" defer></script>
-  <link rel="stylesheet" href="contact.css?v=1">
+  <link rel="stylesheet" href="contact.css?v=2">
   <script src="brief.js?v=3" defer></script>
   <link rel="stylesheet" href="identity.css">
 </head>
@@ -29,6 +31,7 @@
       <p class="kicker">Контакты</p>
       <h1 id="contact-title">Обсудим<br>ваш проект<span aria-hidden="true">.</span></h1>
       <p class="contact-lead">Расскажите, чем занимается ваш бизнес и что должен уметь сайт. Вместе подберём формат.</p>
+      <aside class="contact-offer" aria-label="Условия стартового лендинга"><strong>Стартовый лендинг — 15 000 ₽</strong><p>7 дней на одну услугу и одну страницу. Срок начинается после согласования структуры и получения материалов.</p></aside>
       <a class="contact-channel" href="https://t.me/contessionss">
         <span><small>Написать Антону в Telegram</small><strong>@contessionss</strong></span>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20 20 4M5 4h15v15"/></svg>
@@ -37,21 +40,21 @@
     </section>
     <section class="contact-editor" id="brief-result" aria-labelledby="draft-title">
       <h2 id="draft-title">Коротко о проекте</h2>
-      <p class="draft-help">Подготовьте сообщение здесь и отправьте его в Telegram.</p>
+      <p class="draft-help">Ответьте на три вопроса, скопируйте готовое сообщение и откройте Telegram. Ничего не отправляется автоматически.</p>
       <form id="brief-builder" hidden>
         <label for="brief-business">Чем занимается ваш бизнес?</label>
-        <input id="brief-business" placeholder="Например, студия детейлинга">
+        <input id="brief-business" name="business" type="text" required maxlength="120" placeholder="Например, студия детейлинга">
         <label for="brief-goal">Что должен делать сайт?</label>
-        <select id="brief-goal">
+        <select id="brief-goal" name="goal">
           <option value="">Пока хочу обсудить</option>
           <option value="explain">Представлять услугу</option>
           <option value="compare">Помогать выбирать услуги</option>
           <option value="estimate">Рассчитывать стоимость</option>
-            <option value="dialog">Отвечать на частые вопросы</option>
+          <option value="dialog">Отвечать на частые вопросы</option>
         </select>
         <label for="brief-details">Подробности <span>по желанию</span></label>
-        <textarea id="brief-details" rows="3" placeholder="Что уже есть и какой результат нужен?"></textarea>
-        <button class="button" type="submit">Подготовить текст <span aria-hidden="true">→</span></button>
+        <textarea id="brief-details" name="details" rows="3" maxlength="1500" placeholder="Что уже есть и какой результат нужен?"></textarea>
+        <button class="button" type="submit">Подготовить текст</button>
       </form>
       <div id="draft-preview">
         <label for="brief-text">Текст для Telegram</label>
@@ -62,6 +65,7 @@
 Материалы для старта:</textarea>
         <div class="draft-actions">
           <button class="button" id="copy-brief" type="button" hidden>Скопировать текст</button>
+          <a class="button secondary" id="telegram-brief" href="https://t.me/contessionss">Открыть Telegram</a>
           <button class="draft-edit" id="edit-fields" type="button" hidden>К вопросам</button>
         </div>
         <p id="copy-status" role="status"></p>

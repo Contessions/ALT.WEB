@@ -19,6 +19,10 @@
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
+.contact-offer { max-width: 28rem; padding-block: .5rem 1rem; }
+.contact-offer strong { display: block; color: var(--accent); font-size: 1.1rem; }
+.contact-offer p { margin: .4rem 0 0; color: var(--muted); font-size: .9rem; }
+.contact-offer + .contact-channel { margin-top: 1.5rem; }
 .contact-channel {
   display: flex;
   align-items: center;
@@ -59,8 +63,9 @@
 }
 .contact-editor ::placeholder { opacity: 1; color: var(--muted); }
 .contact-editor .button { margin-top: 1.25rem; gap: 1rem; }
-.draft-actions { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; }
-.draft-edit { min-height: 44px; padding: 0; border: 0; font: inherit; color: var(--foreground); background: transparent; text-decoration: underline; text-underline-offset: .25em; cursor: pointer; }
+.draft-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.draft-actions .button { flex: 1 1 12rem; }
+.draft-edit { flex-basis: 100%; justify-self: start; min-height: 44px; padding: 0; border: 0; font: inherit; color: var(--foreground); background: transparent; text-decoration: underline; text-underline-offset: .25em; cursor: pointer; }
 #copy-status { margin: .65rem 0 0; color: var(--accent); }
 #copy-status:empty { display: none; }
 @media (max-width: 740px) {

@@ -5,7 +5,7 @@
 .header-tools .header-write {position:relative;display:inline-flex;align-items:center;min-height:44px;gap:.35em;font-weight:650;letter-spacing:-.025em}
 .header-write svg {color:var(--accent);flex:none}
 .header-write::before {content:"";position:absolute;bottom:8px;left:0;right:1em;height:2px;background:var(--accent);transform:scaleX(.25);transform-origin:left}
-.studio-signature {font:650 .72rem/1.2 Consolas,monospace;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
+.studio-signature {font:650 .72rem/1.2 var(--font-sans);letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
 .site-footer {border-top:0;flex-wrap:wrap}
 @media(prefers-reduced-motion:no-preference){
   .theme-toggle svg,.header-write svg,.header-write::before {transition:transform .28s cubic-bezier(.2,.75,.3,1)}

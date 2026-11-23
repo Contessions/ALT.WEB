@@ -4,16 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0c10">
-  <meta name="description" content="Дизайн и разработка сайтов — ALT Web, дизайн и разработка сайтов для бизнеса.">
-  <title>Дизайн и разработка сайтов — ALT Web</title>
+  <meta name="description" content="ALT Web — дизайн и разработка лендингов для бизнеса. Структура, адаптивная версия и понятный путь к заявке.">
+  <title>Лендинги для бизнеса — ALT Web</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <script src="design.js?v=9"></script>
-  <link rel="stylesheet" href="style.css?v=12">
-  <script src="cases/forma/catalog.js?v=3" defer></script>
-  <script src="service-selector.js" defer></script>
-  <script src="bot-demo.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=15">
   <link rel="stylesheet" href="paint-preview.css?v=2">
   <script defer src="paint-preview.js?v=2"></script>
-  <link rel="stylesheet" href="cases/forma/disclosure.css?v=2">
   <link rel="stylesheet" href="identity.css">
 </head>
 <body>
@@ -32,71 +30,30 @@
       <div class="wrap hero-copy">
         <p class="kicker">Веб-студия с Алтая</p>
         <h1>Сайты, где услуги <em>понятны.</em></h1>
-        <p class="lead">Дизайн и разработка сайтов для бизнеса. Помогаем клиенту разобраться в предложении и выбрать услугу.</p>
+        <p class="lead">Дизайн и разработка лендингов для малого бизнеса. Помогаем клиенту понять услугу и оставить заявку.</p>
         <div class="actions">
-          <a class="button" href="#services">Подобрать формат</a>
-          <a class="button secondary" href="work.html">Открыть работы</a>
+          <a class="button" href="contact.html?goal=explain">Обсудить лендинг</a>
+          <a class="button secondary" href="work.html">Смотреть демо</a>
         </div>
+        <ul class="hero-assurances" aria-label="Условия работы"><li>15 000 ₽ · 7 дней</li><li>Два раунда правок</li><li>Исходники остаются у вас</li></ul>
       </div>
 
     </section>
-<section class="wrap band task-finder" id="services">
-  <div class="section-head" id="brief">
-    <p class="kicker">Услуги</p>
-    <h2>Подберите формат сайта</h2>
+<section class="wrap band offer" id="services" aria-labelledby="offer-title">
+  <div class="offer-visual page-proof"><img src="assets/polish-page.webp" alt="Первый экран демонстрационного лендинга полировки FORMA" width="1160" height="556" loading="lazy"></div>
+  <div class="offer-copy">
+    <p class="kicker">Простой старт</p>
+    <h2 id="offer-title">Лендинг для одной услуги</h2>
+    <p class="lead">Одна страница, на которой клиент видит предложение, понимает условия и знает, как обратиться.</p>
+    <dl class="offer-terms" aria-label="Стоимость и срок"><div><dt>Стоимость пакета</dt><dd>15 000 ₽</dd></div><div><dt>Срок</dt><dd>7 дней</dd></div></dl>
+    <ul class="offer-list">
+      <li><strong>Структура и содержание</strong><span>Оффер, условия, ответы на вопросы и призыв к действию.</span></li>
+      <li><strong>Дизайн и разработка</strong><span>Макет, адаптивная вёрстка и проверка основного сценария.</span></li>
+      <li><strong>Путь к заявке</strong><span>Переход в Telegram или звонок без лишних форм.</span></li>
+    </ul>
+    <div class="actions"><a class="button" href="contact.html?goal=explain">Обсудить лендинг</a><a class="sample-link" href="cases/forma/polish.html">Открыть демо FORMA</a></div>
+    <p class="offer-note">Срок начинается после согласования структуры и получения материалов. Дополнительные страницы и интерактивные модули считаются отдельно. <a href="services.html">Все услуги</a>.</p>
   </div>
-  <fieldset class="task-switch" hidden>
-    <legend>Что должен сделать посетитель?</legend>
-    <label><input type="radio" name="format" value="landing" checked><span class="format-thumb" aria-hidden="true"><img src="cases/forma/assets/detail.jpg" loading="lazy" alt=""></span><span class="format-label">Понять услугу</span></label>
-    <label><input type="radio" name="format" value="site"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-pages.webp" loading="lazy" alt=""></span><span class="format-label">Выбрать направление</span></label>
-    <label><input type="radio" name="format" value="interactive"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-controls.webp" loading="lazy" alt=""></span><span class="format-label">Рассчитать цену</span></label>
-    <label><input type="radio" name="format" value="telegram"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-chat.webp" loading="lazy" alt=""></span><span class="format-label">Получить ответ</span></label>
-  </fieldset>
-  <article class="task-panel" data-format="landing">
-    <div class="service-image page-proof"><img src="assets/polish-page.webp" alt="Первый экран демонстрационного лендинга полировки FORMA" width="1160" height="556" loading="lazy"></div>
-    <div class="task-content">
-      <h3>Лендинг</h3><p>Одна услуга на одной странице: посетитель видит результат, разбирается в условиях и оставляет запрос.</p>
-      <p class="scope-label">Состав работ</p><ul class="deliverables"><li>Структура и дизайн страницы</li><li>Блок услуги, ответы на вопросы и обращение</li></ul>
-      <details class="sample-faq"><summary>Что даёт полировка?</summary><p>Уменьшает мелкие следы моек и возвращает блеск. В демо FORMA разницу можно рассмотреть под лампой.</p></details>
-      <div class="actions"><a class="button" href="contact.html?goal=explain">Обсудить лендинг</a><a class="sample-link" href="cases/forma/polish.html">Лендинг FORMA</a></div>
-    </div>
-  </article>
-  <article class="task-panel" data-format="site">
-    <div class="service-image page-proof"><img src="assets/studio-home.webp" width="1160" height="626" alt="Главная страница ALT Web с рельефом Алтая" loading="lazy"></div>
-    <div class="task-content">
-      <h3>Сайт компании</h3><p>Каждому направлению — своя страница. Клиент выбирает услугу, смотрит подходящую работу и находит контакт.</p>
-      <p class="scope-label">Состав работ</p><ul class="deliverables"><li>Карта разделов и навигация</li><li>Страницы услуг, кейсов и контактов</li></ul>
-      <nav class="sample-nav" aria-label="Пример разделов на сайте студии"><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a></nav>
-      <div class="actions"><a class="button" href="contact.html?goal=compare">Обсудить сайт</a></div>
-    </div>
-  </article>
-  <article class="task-panel" data-format="interactive">
-    <div class="service-image page-proof"><img src="assets/forma-quote.webp" alt="Расчёт услуг и состава заказа в FORMA" loading="lazy"></div>
-    <div class="task-content">
-      <h3>Калькулятор</h3><p>Клиент меняет параметры и сразу видит стоимость. Правила расчёта согласуем с командой до разработки.</p>
-      <p class="scope-label">Состав работ</p><ul class="deliverables"><li>Модель цен и проверка ввода</li><li>Интерактивный расчёт и итоговая сводка</li></ul>
-      <div class="sample-price" hidden>
-        <label for="sample-vehicle">Демо FORMA · полировка кузова</label>
-        <select id="sample-vehicle"></select>
-        <output for="sample-vehicle" aria-live="polite"></output>
-      </div>
-      <div class="actions"><a class="button" href="contact.html?goal=estimate">Обсудить расчёт</a><a class="sample-link" href="cases/forma/index.html#estimate">Калькулятор FORMA</a></div>
-    </div>
-  </article>
-  <article class="task-panel" data-format="telegram">
-    <div class="service-image"><img src="assets/studio-chat.webp" width="1000" height="667" alt="" loading="lazy"></div>
-    <div class="task-content">
-      <h3>Telegram-бот</h3><p>Клиент задаёт типичный вопрос, получает короткий ответ и переходит к подходящей услуге.</p>
-      <p class="scope-label">Состав работ</p><ul class="deliverables"><li>Сценарий диалога и ответы</li><li>Переход от запроса к следующему действию</li></ul>
-      <div class="bot-demo">
-        <p class="bot-reply" id="bot-reply" role="status">Демо бота FORMA. Что вас интересует?</p>
-        <div class="bot-choices" id="bot-choices" hidden><button type="button" data-topic="services" aria-pressed="false">Услуги</button><button type="button" data-topic="price" aria-pressed="false">Цена</button><button type="button" data-topic="booking" aria-pressed="false">Запись</button></div>
-        <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
-        <noscript>Для диалога включите JavaScript.</noscript>
-      </div>
-      <div class="actions"><a class="button" href="contact.html?goal=dialog">Обсудить бота</a></div>
-    </div>
-  </article>
 </section>
 <section class="wrap feature" id="portfolio" aria-labelledby="forma-heading">
   <figure class="paint-preview">

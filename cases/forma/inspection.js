@@ -14,8 +14,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
 
   const scratchCount = 1800;
   const flakeCount = 5600;
-  const surfaceOffset = siteModule.surface();
-  const sample = new Float64Array(siteModule.memory.buffer, surfaceOffset, scratchCount * 6 + flakeCount * 3);
+  const sample = siteModule.surface();
 
   // The grain stays fixed when the lamp moves and is shared by both finishes.
   const grainLayer = document.createElement('canvas');
@@ -107,7 +106,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
       const halfLength = (2.6 + sample[i + 2] * 88) * Math.min(1.4, height / 240);
       const dx = Math.cos(angle) * halfLength;
       const dy = Math.sin(angle) * halfLength;
-      const alpha = siteModule.scratch_alpha((x - lampX) / (radius * 1.15), (y - lampY) / radius, sample[i + 5], Number(corrected));
+      const alpha = siteModule.scratchAlpha((x - lampX) / (radius * 1.15), (y - lampY) / radius, sample[i + 5], Number(corrected));
       if (alpha < .01) continue;
       context.lineWidth = .32 + .54 * depth;
       context.strokeStyle = 'rgba(243,243,238,' + Math.min(.93, alpha * 1.25) + ')';
@@ -133,7 +132,7 @@ if (typeof siteModule !== 'undefined' && siteModule) {
   }
   function positionLight(event) {
     const bounds = paint.getBoundingClientRect();
-    lamp.value = String(siteModule.light_percent(event.clientX - bounds.left - bounds.width * lampInset, bounds.width * (1 - 2 * lampInset)));
+    lamp.value = String(siteModule.lightPercent(event.clientX - bounds.left - bounds.width * lampInset, bounds.width * (1 - 2 * lampInset)));
     requestDraw();
   }
   paint.addEventListener('pointerdown', positionLight);

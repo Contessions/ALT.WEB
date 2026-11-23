@@ -1,4 +1,13 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../../assets/fonts/inter-variable.woff2") format("woff2");
+}
+
 :root {
+  --font-sans: "Inter", Arial, sans-serif;
   color-scheme: dark;
   --base: #10141a;
   --panel: #202732;
@@ -6,7 +15,7 @@
   --muted: #b7c2d1;
   --line: #455264;
   --accent: #9cc9ff;
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink);
   background: var(--base);
 }
