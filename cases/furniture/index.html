@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5ede1">
+  <meta name="description" content="Мера — демонстрационный магазин мебели ALT Web. Каталог, проверка свободного места и предварительный расчёт.">
+  <title>Мера — мебельный магазин · ALT Web</title>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      @view-transition { navigation: auto; }
+      ::view-transition-group(root) { animation-duration: 160ms; }
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="catalog.js"></script>
+  <script defer src="engine.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="curtain"><div class="wrap header">
+    <a class="brand" href="#top" aria-label="Мера, наверх">
+      <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>мера<span class="brand-period">.</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Разделы магазина">
+      <a href="#catalog">Каталог</a>
+      <a href="#fit">Проверка места</a>
+    </nav>
+    <details class="contact-drawer">
+      <summary class="button button-outline">Контакты</summary>
+      <div class="contact-sheet">
+        <strong>Связаться с ALT Web</strong>
+        <a href="tel:+79635346712">+7 963 534-67-12</a>
+        <a href="https://t.me/contessionss">Написать в Telegram</a>
+      </div>
+    </details>
+    <a class="button button-outline header-estimate" href="#estimate">Смета <span id="cart-count" hidden></span></a>
+  </div></header>
+  <main id="main" tabindex="-1">
+    <section class="wrap hero" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow hero-kicker">Магазин мебели</p>
+        <h1 id="title"><span>У каждой вещи</span><em>своё место.</em></h1>
+        <p class="hero-lead">Подберите мебель под вашу комнату, проверьте, сколько места останется, и соберите смету.</p>
+        <div class="actions hero-actions">
+          <a class="button button-solid" href="#catalog">Смотреть каталог</a>
+          <a class="button button-outline" href="#fit">Проверить место</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img id="scene-photo" src="assets/salon.webp" width="512" height="1024" alt="Интерьер гостиной в винных тонах" fetchpriority="high">
+        <figcaption class="scene-controls">
+          <span id="scene-title" aria-live="polite">Гостиная в винных тонах</span>
+          <div class="scene-buttons" role="group" aria-label="Выбрать фотосцену">
+            <button type="button" data-scene="salon" aria-label="Гостиная в винных тонах" aria-pressed="true"></button>
+            <button type="button" data-scene="textile" aria-label="Ткани крупным планом" aria-pressed="false"></button>
+            <button type="button" data-scene="atelier" aria-label="Столовая под аркой" aria-pressed="false"></button>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+    <noscript><p class="wrap">Включите JavaScript, чтобы открыть каталог и калькуляторы.</p></noscript>
+    <div id="shop" hidden>
+      <section id="catalog" class="wrap shop-section" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <h2 id="catalog-title">Каталог</h2>
+          <p>Выберите комнату или задайте доступные габариты.</p>
+        </div>
+        <div class="room-grid" aria-label="Подборки по комнатам">
+          <button class="room-card" type="button" data-room="living" aria-pressed="false"><img src="assets/living.webp" width="640" height="420" loading="lazy" alt=""><span>Гостиная</span></button>
+          <button class="room-card" type="button" data-room="bedroom" aria-pressed="false"><img src="assets/bedroom.webp" width="640" height="420" loading="lazy" alt=""><span>Спальня</span></button>
+          <button class="room-card" type="button" data-room="dining" aria-pressed="false"><img src="assets/dining.webp" width="640" height="420" loading="lazy" alt=""><span>Столовая</span></button>
+          <button class="room-card" type="button" data-room="office" aria-pressed="false"><img src="assets/office.webp" width="640" height="420" loading="lazy" alt=""><span>Кабинет</span></button>
+        </div>
+        <form id="filters" class="filter-panel">
+          <div class="fields">
+            <label>Поиск <input type="search" name="query" maxlength="100" placeholder="Название или материал"></label>
+            <label>Комната <select name="room"><option value="">Все комнаты</option></select></label>
+            <label>Тип мебели <select name="category"><option value="">Все типы</option></select></label>
+            <label>Ширина до, см <input name="width" type="number" min="1" max="2000" step="1" placeholder="Любая"></label>
+            <label>Глубина до, см <input name="depth" type="number" min="1" max="2000" step="1" placeholder="Любая"></label>
+            <label>Цена до, ₽ <input name="price" type="number" min="1" max="100000000" step="1" placeholder="Любая"></label>
+            <label>Сортировка <select name="sort"><option value="catalog">По каталогу</option><option value="price">Сначала дешевле</option></select></label>
+          </div>
+          <div class="actions"><button type="submit" class="button button-solid">Показать мебель</button><button type="reset" class="button button-outline">Сбросить</button></div>
+        </form>
+        <p id="results-status" role="status"></p>
+        <div id="products" class="product-grid"></div>
+      </section>
+      <section id="fit" class="fit-section" aria-labelledby="fit-title">
+        <div class="wrap shop-section">
+          <div class="section-heading">
+            <h2 id="fit-title" tabindex="-1">Проверка места</h2>
+            <p>Узнайте, поместится ли мебель и хватит ли места пройти.</p>
+          </div>
+          <div class="feature-layout">
+            <figure class="feature-image">
+              <img src="assets/atelier.webp" width="512" height="1024" loading="lazy" alt="Столовая с круглым столом под аркой">
+            </figure>
+            <div class="feature-content">
+              <p id="fit-help">Измерьте свободный прямоугольник. Мы поставим мебель в дальний левый угол и проверим проход перед ней в двух положениях. Двери, ящики, высоту и занос проверяйте отдельно.</p>
+              <form id="fit-form" aria-describedby="fit-help">
+                <div class="fields">
+                  <label>Модель и исполнение <select name="variant" required></select></label>
+                  <label>Ширина зоны, см <input name="width" type="number" min="1" max="2000" step="1" required placeholder="Например, 220"></label>
+                  <label>Глубина зоны, см <input name="depth" type="number" min="1" max="2000" step="1" required placeholder="Например, 180"></label>
+                  <label>Желаемый проход, см <input name="passage" type="number" min="0" max="2000" step="1" value="70" required></label>
+                </div>
+                <button type="submit" class="button button-solid">Рассчитать проход</button>
+              </form>
+            </div>
+          </div>
+          <p id="fit-status" role="status"></p>
+          <div class="fit-grid" id="fit-result"></div>
+        </div>
+      </section>
+      <section id="estimate" class="wrap shop-section" aria-labelledby="estimate-title">
+        <div class="section-heading">
+          <h2 id="estimate-title" tabindex="-1">Ваша смета</h2>
+          <p>Предварительный расчёт. Доставка и сборка считаются отдельно.</p>
+        </div>
+        <div class="feature-layout estimate-layout">
+          <div class="estimate-content">
+            <p id="cart-empty">Добавьте мебель из каталога.</p>
+            <ul id="cart" class="cart"></ul>
+            <div class="estimate-total"><span>Итого</span><output id="total">0 ₽</output></div>
+            <button type="button" class="button button-solid" id="download" disabled>Скачать расчёт (.txt)</button>
+            <p id="cart-status" role="status"></p>
+          </div>
+          <figure class="feature-image">
+            <img src="assets/textile.webp" width="512" height="1024" loading="lazy" alt="Образцы тканей и фактур крупным планом">
+          </figure>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap footer">
+    <a class="brand" href="#top" aria-label="Мера, наверх">
+      <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>мера<span class="brand-period">.</span></span>
+    </a>
+    <p>Демонстрационный магазин. Ассортимент и цены учебные.</p>
+    <a class="button button-outline" href="../../work.html#furniture-case">К портфолио ALT Web</a>
+  </footer>
+  <template id="product-card">
+    <article class="product-card">
+      <div class="product-image"><img width="510" height="340" alt="" loading="lazy" decoding="async"></div>
+      <div class="product-copy">
+        <p class="product-category" data-category></p>
+        <h3></h3>
+        <p class="product-description" data-description></p>
+        <label>Исполнение <select data-variant></select></label>
+        <div class="product-spec"><p data-size></p><strong data-price></strong></div>
+        <div class="actions">
+          <button class="button button-solid" type="button" data-add>В расчёт</button>
+          <button class="button button-outline" type="button" data-fit>Проверить место</button>
+        </div>
+        <p class="feedback" data-feedback role="status"></p>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
