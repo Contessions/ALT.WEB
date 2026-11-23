@@ -7,3 +7,8 @@
 .paint-sample input { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
 .paint-sample:focus-within {outline:3px solid var(--accent);outline-offset:3px}
 .sample-labels { display:flex; justify-content:space-between; font-size:.85rem; padding:.7rem 0; border-bottom:1px solid var(--line); }
+.sample-labels { justify-content:center; gap:2px; border:0; }
+.sample-labels button { min-height:44px; flex:1; max-width:10rem; padding:.35rem; background:var(--panel); color:var(--muted); border:0; border-bottom:2px solid transparent; font:inherit; font-size:.85rem; font-weight:600; cursor:pointer; }
+.sample-labels button[aria-pressed="true"] { background:color-mix(in srgb,var(--accent) 13%,var(--panel)); border-color:var(--accent); color:var(--foreground); }
+.paint-sample:has(input):not(:focus-within) .divider { pointer-events:none; }
+.paint-preview:has(button:not([data-boundary="50"])[aria-pressed="true"]) .divider { visibility:hidden; }

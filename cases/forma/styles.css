@@ -43,7 +43,7 @@ html { scroll-padding-top: 64px; }
   border: 0;
   padding: .5rem .75rem .5rem 1rem;
   color: #dcecff;
-  background: #233044;
+  background: transparent;
 }
 .contact-glyph, .quote-download svg {
   width: 19px;
@@ -399,7 +399,7 @@ dd { padding: .4rem 0 1rem; }
   background: #273545;
 }
 .program a:is(:hover,:focus-visible),.credit a:is(:hover,:focus-visible),.footer a:not(.portfolio-gate):is(:hover,:focus-visible) { color: var(--accent); }
-.credit a {font-weight:800;letter-spacing:-.045em}
+.credit a {background:transparent; padding:0 .25rem; font-weight:800; letter-spacing:-.045em; text-shadow:0 1px 5px #000}
 
 /* The index closes with a transition from the studio mark back to the portfolio. */
 .footer-portal { align-items: center; }
@@ -411,11 +411,11 @@ dd { padding: .4rem 0 1rem; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: min(100%,43rem);
-  min-height: 108px;
-  padding: clamp(1rem,2.5vw,2rem);
+  width: fit-content;
+  min-height: 44px;
+  padding: .35rem .7rem;
   color: #e8f3ff;
-  background: linear-gradient(108deg,#22344b,#182434 72%,#233853);
+  background: transparent;
 }
 .portfolio-gate::before {
   content: "";
@@ -428,10 +428,10 @@ dd { padding: .4rem 0 1rem; }
 }
 .footer .portfolio-gate:is(:hover,:focus-visible) { color: #102339; }
 .portfolio-gate:is(:hover,:focus-visible)::before { transform: scaleX(1); }
-.gate-copy { display: grid; gap: .1rem; }
+.gate-copy { display:inline-flex; align-items:baseline; gap:.4rem; }
 .gate-copy > span { font-size: .85rem; }
-.gate-copy strong { font-size: clamp(2.1rem,4.5vw,4rem); line-height: 1.1; letter-spacing: -.065em; }
-.gate-mark { width: clamp(46px,6.5vw,84px); overflow: visible; stroke: currentColor; stroke-width: 5; fill: none; }
+.gate-copy strong { font-size:1.05rem; line-height: 1.1; letter-spacing: -.065em; }
+.gate-mark { width:22px; overflow: visible; stroke: currentColor; stroke-width: 5; fill: none; }
 .portfolio-gate:is(:hover,:focus-visible) .gate-mark path { transform: translateX(4px); }
 
 .choice:has(:checked),.option:has(:checked) { box-shadow: inset 3px 0 var(--accent); }
