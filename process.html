@@ -3,60 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0c10">
-  <meta name="description" content="Процесс разработки — ALT Web, дизайн и разработка сайтов для бизнеса.">
-  <title>Процесс разработки — ALT Web</title>
+  <meta name="theme-color" content="#080a09">
+  <meta name="description" content="Процесс ALT.WEB — структура, дизайн, разработка, проверка и передача сайта.">
+  <title>Процесс разработки — ALT.WEB</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <script src="design.js?v=9"></script>
   <link rel="stylesheet" href="style.css?v=15">
-  
-  <link rel="stylesheet" href="cases/forma/disclosure.css?v=2">
-  <link rel="stylesheet" href="identity.css">
+  <link rel="stylesheet" href="studio.css?v=2">
+  <script src="studio.js?v=1" defer></script>
 </head>
-<body>
+<body class="studio-page">
   <a class="skip" href="#main">К содержанию</a>
-  <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
-    <nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html" aria-current="page">Процесс</a><a href="contact.html">Контакты</a></nav>
-    <div class="header-tools">
-      <a class="header-call" href="tel:+79635346712" aria-label="Позвонить Антону: +7 963 534 67-12"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 3 4 0 2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-.5-2 0-4 2-4Z"/></svg></a>
-      <a class="header-write" href="https://t.me/contessionss">Написать<svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="m2 9 15-6-4 14-4-5-3 2 .5-4Z" stroke="currentColor" stroke-linejoin="round"/><path d="m7 10 7-5-5 7" stroke="currentColor" stroke-linejoin="round"/></svg></a>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+  <header class="alt-header" data-header>
+    <div class="studio-header-inner">
+      <a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную"><span class="alt-logo-main">ALT<span>.WEB</span></span><span class="alt-logo-sub">DESIGN / CODE / AI</span></a>
+      <nav class="alt-navigation" id="alt-navigation" aria-label="Основная навигация"><a href="index.html#studio">Студия</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html" aria-current="page">Процесс</a><a href="contact.html">Контакты</a><div class="alt-mobile-contacts"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div></nav>
+      <div class="alt-header-actions">
+        <div class="alt-direct-contacts" aria-label="Прямые контакты"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div>
+        <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+        <a class="alt-header-cta" href="contact.html"><span class="alt-cta-full">Обсудить проект</span><span class="alt-cta-short">Контакт</span><span aria-hidden="true">↗</span></a>
+        <button class="alt-menu-toggle" type="button" aria-expanded="false" aria-controls="alt-navigation"><span>Меню</span><span class="alt-menu-icon" aria-hidden="true"></span></button>
+      </div>
     </div>
   </header>
+
   <main id="main" tabindex="-1">
-    <div class="wrap">
-<header class="intro">
-<p class="kicker">Процесс</p>
-<h1>Как мы работаем</h1>
-<p class="lead">На каждом этапе есть результат, который можно посмотреть, проверить и согласовать.</p></header><ol class="timeline">
-<li>
-<h2>Бриф и структура</h2>
-<p>Задача бизнеса, маршрут посетителя и перечень страниц.</p></li>
-<li>
-<h2>Дизайн</h2>
-<p>Макеты ключевых страниц и состояний на телефоне и компьютере.</p></li>
-<li>
-<h2>Разработка</h2>
-<p>Работающий сайт, включая заявленную интерактивность и проверки форм.</p></li>
-<li>
-<h2>Проверка и передача</h2>
-<p>Проверенные сценарии, исходники и инструкция по обновлению контента.</p></li></ol>
-<section id="faq" class="band">
-<h2>Частые вопросы</h2><details><summary>Сколько стоит лендинг и сколько он занимает?</summary>
-<p>Стартовый пакет — 15 000 ₽ и 7 дней: одна услуга, одна страница, адаптивная версия, путь к обращению и два раунда правок. Срок начинается после согласования структуры и получения материалов. Дополнительные страницы и интерактивные модули считаются отдельно.</p></details><details><summary>От чего зависит срок других форматов?</summary>
-<p>От числа страниц, объёма контента и логики интерактивных модулей. Срок согласуем после брифа.</p></details><details><summary>Будет ли сайт работать на телефоне?</summary>
-<p>Адаптивная версия входит в разработку. Проверяем ключевые сценарии на узких экранах.</p></details><details><summary>Как проходят правки?</summary>
-<p>В стоимость проекта входят два раунда согласованных правок.</p></details></section></div>
-    <section class="footer-cta">
-<div class="wrap">
-<h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
+    <section class="studio-container studio-intro" aria-labelledby="process-title">
+      <span class="studio-intro-mark" aria-hidden="true">04</span>
+      <p class="studio-kicker studio-reveal"><span>01</span> Процесс / прозрачность</p>
+      <h1 id="process-title" class="studio-reveal">Как мы<br><span>работаем.</span></h1>
+      <div class="studio-intro-foot studio-reveal"><p class="studio-intro-code">Brief / design<br>Code / delivery</p><p class="lead">На каждом этапе есть результат, который можно посмотреть, проверить и согласовать.</p></div>
+    </section>
+
+    <section class="studio-container studio-process" aria-label="Этапы разработки">
+      <ol class="timeline">
+        <li class="studio-reveal"><h2>Бриф и структура</h2><p>Задача бизнеса, маршрут посетителя и перечень страниц.</p></li>
+        <li class="studio-reveal"><h2>Дизайн</h2><p>Макеты ключевых страниц и состояний на телефоне и компьютере.</p></li>
+        <li class="studio-reveal"><h2>Разработка</h2><p>Работающий сайт, включая заявленную интерактивность и проверки форм.</p></li>
+        <li class="studio-reveal"><h2>Проверка и передача</h2><p>Проверенные сценарии, исходники и инструкция по обновлению контента.</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" class="studio-faq" aria-labelledby="faq-title">
+      <div class="studio-container">
+        <div class="studio-reveal"><p class="studio-kicker"><span>02</span> Детали</p><h2 id="faq-title">Частые вопросы</h2></div>
+        <div class="faq-list studio-reveal">
+          <details><summary>Сколько стоит лендинг и сколько он занимает?</summary><p>Стартовый пакет — 15 000 ₽ и 7 дней: одна услуга, одна страница, адаптивная версия, путь к обращению и два раунда правок. Срок начинается после согласования структуры и получения материалов. Дополнительные страницы и интерактивные модули считаются отдельно.</p></details>
+          <details><summary>От чего зависит срок других форматов?</summary><p>От числа страниц, объёма контента и логики интерактивных модулей. Срок согласуем после брифа.</p></details>
+          <details><summary>Будет ли сайт работать на телефоне?</summary><p>Адаптивная версия входит в разработку. Проверяем ключевые сценарии на узких экранах.</p></details>
+          <details><summary>Как проходят правки?</summary><p>В стоимость проекта входят два раунда согласованных правок.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-cta" aria-labelledby="process-cta"><div class="studio-container studio-reveal"><div><p class="studio-kicker">Новый проект</p><h2 id="process-cta">Есть задача<br>для сайта?</h2></div><a class="button" href="contact.html">Обсудить проект</a></div></section>
   </main>
-  <footer class="wrap site-footer">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="125" height="30" alt=""></a>
-    <span class="studio-signature">Веб-студия</span>
-    <a class="button secondary" href="https://t.me/contessionss">Написать Антону</a>
-  </footer>
+
+  <footer class="studio-footer"><div class="studio-container"><a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную"><span class="alt-logo-main">ALT<span>.WEB</span></span></a><p>Веб-студия с Алтая.<br>Дизайн, код и интерактивные системы.</p><a class="studio-footer-link" href="https://t.me/contessionss">Написать Антону <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>

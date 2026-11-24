@@ -3,112 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0c10">
-  <meta name="description" content="Услуги — ALT Web, дизайн и разработка сайтов для бизнеса.">
-  <title>Услуги — ALT Web</title>
+  <meta name="theme-color" content="#080a09">
+  <meta name="description" content="Услуги ALT.WEB — лендинги, сайты компаний, интерактивные модули и Telegram-боты для бизнеса.">
+  <title>Услуги — ALT.WEB</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <script src="design.js?v=9"></script>
   <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="studio.css?v=2">
+  <script src="studio.js?v=1" defer></script>
   <script src="cases/forma/catalog.js?v=3" defer></script>
   <script src="service-selector.js" defer></script>
   <script src="bot-demo.js" defer></script>
-  <link rel="stylesheet" href="identity.css">
 </head>
-<body>
+<body class="studio-page">
   <a class="skip" href="#main">К содержанию</a>
-  <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
-    <nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="services.html" aria-current="page">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
-    <div class="header-tools">
-      <a class="header-call" href="tel:+79635346712" aria-label="Позвонить Антону: +7 963 534 67-12"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 3 4 0 2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-.5-2 0-4 2-4Z"/></svg></a>
-      <a class="header-write" href="https://t.me/contessionss">Написать<svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="m2 9 15-6-4 14-4-5-3 2 .5-4Z" stroke="currentColor" stroke-linejoin="round"/><path d="m7 10 7-5-5 7" stroke="currentColor" stroke-linejoin="round"/></svg></a>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+  <header class="alt-header" data-header>
+    <div class="studio-header-inner">
+      <a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную">
+        <span class="alt-logo-main">ALT<span>.WEB</span></span><span class="alt-logo-sub">DESIGN / CODE / AI</span>
+      </a>
+      <nav class="alt-navigation" id="alt-navigation" aria-label="Основная навигация">
+        <a href="index.html#studio">Студия</a><a href="services.html" aria-current="page">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a>
+        <div class="alt-mobile-contacts"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div>
+      </nav>
+      <div class="alt-header-actions">
+        <div class="alt-direct-contacts" aria-label="Прямые контакты"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div>
+        <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+        <a class="alt-header-cta" href="contact.html"><span class="alt-cta-full">Обсудить проект</span><span class="alt-cta-short">Контакт</span><span aria-hidden="true">↗</span></a>
+        <button class="alt-menu-toggle" type="button" aria-expanded="false" aria-controls="alt-navigation"><span>Меню</span><span class="alt-menu-icon" aria-hidden="true"></span></button>
+      </div>
     </div>
   </header>
+
   <main id="main" tabindex="-1">
-    <div class="wrap">
-<header class="intro">
-<p class="kicker">Услуги</p>
-<h1>Что мы можем сделать</h1>
-<p class="lead">Расскажите, кто приходит на ваш сайт и с какой задачей. Подберём формат и согласуем состав работ.</p></header>
-<div class="task-finder service-directory">
-  <fieldset class="task-switch" hidden>
-    <legend>Что должен сделать посетитель?</legend>
-    <label><input type="radio" name="format" value="landing" checked><span class="format-thumb" aria-hidden="true"><img src="cases/forma/assets/detail.jpg" loading="lazy" alt=""></span><span class="format-label">Понять услугу</span></label>
-    <label><input type="radio" name="format" value="site"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-pages.webp" loading="lazy" alt=""></span><span class="format-label">Выбрать направление</span></label>
-    <label><input type="radio" name="format" value="interactive"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-controls.webp" loading="lazy" alt=""></span><span class="format-label">Рассчитать цену</span></label>
-    <label><input type="radio" name="format" value="telegram"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-chat.webp" loading="lazy" alt=""></span><span class="format-label">Получить ответ</span></label>
-  </fieldset>
-<div class="service-examples">
-  <article class="card" data-format="landing" id="landing">
-    <h2>Лендинг</h2>
-    <p>Для одной услуги, запуска или рекламной кампании.</p>
-    <p class="service-offer"><span class="service-price">15 000 ₽</span><span>7 дней · одна услуга и одна страница</span></p>
-    <p><strong>Что входит</strong> Оффер, программа или цена, ответы на вопросы и путь к обращению. Два раунда правок.</p>
-    <a class="service-example" href="cases/forma/polish.html">
-      <div class="example-visual example-photo">
-        <img src="assets/polish-page.webp" width="1160" height="556" alt="Первый экран лендинга полировки FORMA" loading="lazy">
+    <section class="studio-container studio-intro" aria-labelledby="services-title">
+      <span class="studio-intro-mark" aria-hidden="true">04</span>
+      <p class="studio-kicker studio-reveal"><span>01</span> Услуги / экспертиза</p>
+      <h1 id="services-title" class="studio-reveal">Что мы можем<br><span>сделать.</span></h1>
+      <div class="studio-intro-foot studio-reveal">
+        <p class="studio-intro-code">Design / development<br>Interaction / AI</p>
+        <p class="lead">Расскажите, кто приходит на ваш сайт и с какой задачей. Подберём формат и согласуем состав работ.</p>
       </div>
-      <span class="example-caption"><strong>Лендинг полировки FORMA</strong><span>Открыть демо</span></span>
-    </a>
-    <a class="button format-contact" href="contact.html?goal=explain">Обсудить этот формат</a>
-  </article>
-  <article class="card" data-format="site" id="site">
-    <h2>Сайт компании</h2>
-    <p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
-    <p><strong>Что входит</strong> Страницы услуг, кейсы, FAQ и контакты.</p>
-    <a class="service-example" href="index.html">
-      <div class="example-visual example-photo"><img src="assets/studio-home.webp" alt="Главная страница ALT Web" loading="lazy" width="1160" height="626"></div>
-      <span class="example-caption"><strong>Многостраничный ALT.WEB</strong><span>На главную</span></span>
-    </a>
-    <a class="button format-contact" href="contact.html?goal=compare">Обсудить этот формат</a>
-  </article>
-  <article class="card" data-format="interactive" id="interactive">
-    <h2>Интерактивный модуль</h2>
-    <p>Для услуги, которую проще показать в действии.</p>
-    <p><strong>Что входит</strong> Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p>
-    <div class="sample-price" hidden>
-        <label for="sample-vehicle">Демо FORMA · полировка кузова</label>
-        <select id="sample-vehicle"></select>
-        <output for="sample-vehicle" aria-live="polite"></output>
+    </section>
+
+    <section class="studio-container studio-services" aria-label="Форматы работ">
+      <div class="task-finder service-directory">
+        <fieldset class="task-switch studio-reveal" hidden>
+          <legend>Что должен сделать посетитель?</legend>
+          <label><input type="radio" name="format" value="landing" checked><span class="format-thumb" aria-hidden="true"><img src="cases/forma/assets/detail.jpg" loading="lazy" alt=""></span><span class="format-label">Понять услугу</span></label>
+          <label><input type="radio" name="format" value="site"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-pages.webp" loading="lazy" alt=""></span><span class="format-label">Выбрать направление</span></label>
+          <label><input type="radio" name="format" value="interactive"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-controls.webp" loading="lazy" alt=""></span><span class="format-label">Рассчитать цену</span></label>
+          <label><input type="radio" name="format" value="telegram"><span class="format-thumb" aria-hidden="true"><img src="assets/studio-chat.webp" loading="lazy" alt=""></span><span class="format-label">Получить ответ</span></label>
+        </fieldset>
+        <div class="service-examples">
+          <article class="card studio-reveal" data-format="landing" id="landing">
+            <h2>Лендинг</h2>
+            <p>Для одной услуги, запуска или рекламной кампании.</p>
+            <p class="service-offer"><span class="service-price">15 000 ₽</span><span>7 дней · одна услуга и одна страница</span></p>
+            <p><strong>Что входит</strong>Оффер, программа или цена, ответы на вопросы и путь к обращению. Два раунда правок.</p>
+            <a class="service-example" href="cases/forma/polish.html">
+              <div class="example-visual example-photo"><img src="assets/polish-page.webp" width="1160" height="556" alt="Первый экран лендинга полировки FORMA" loading="lazy"></div>
+              <span class="example-caption"><strong>Лендинг полировки FORMA</strong><span>Открыть демо ↗</span></span>
+            </a>
+            <a class="button format-contact" href="contact.html?goal=explain">Обсудить этот формат</a>
+          </article>
+          <article class="card studio-reveal" data-format="site" id="site">
+            <h2>Сайт компании</h2>
+            <p>Для бизнеса с несколькими услугами и разными аудиториями.</p>
+            <p><strong>Что входит</strong>Страницы услуг, кейсы, FAQ и контакты.</p>
+            <a class="service-example" href="index.html">
+              <div class="example-visual example-photo"><img src="assets/studio-home.webp" alt="Главная страница ALT.WEB" loading="lazy" width="1160" height="626"></div>
+              <span class="example-caption"><strong>Многостраничный ALT.WEB</strong><span>На главную ↗</span></span>
+            </a>
+            <a class="button format-contact" href="contact.html?goal=compare">Обсудить этот формат</a>
+          </article>
+          <article class="card studio-reveal" data-format="interactive" id="interactive">
+            <h2>Интерактивный модуль</h2>
+            <p>Для услуги, которую проще показать в действии.</p>
+            <p><strong>Что входит</strong>Калькулятор, сравнение или конфигуратор с понятными правилами и итогом.</p>
+            <div class="sample-price" hidden>
+              <label for="sample-vehicle">Демо FORMA · полировка кузова</label>
+              <select id="sample-vehicle"></select>
+              <output for="sample-vehicle" aria-live="polite"></output>
+            </div>
+            <a class="service-example" href="cases/forma/index.html#estimate">
+              <div class="example-visual example-photo"><img src="assets/forma-quote.webp" alt="Расчёт стоимости в FORMA" loading="lazy"></div>
+              <span class="example-caption"><strong>Калькулятор FORMA</strong><span>Попробовать ↗</span></span>
+            </a>
+            <a class="button format-contact" href="contact.html?goal=estimate">Обсудить этот формат</a>
+          </article>
+          <article class="card studio-reveal" data-format="telegram" id="telegram">
+            <h2>Telegram-бот</h2>
+            <p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
+            <p><strong>Что входит</strong>Сценарий диалога, проверка ввода и способ передать запрос команде.</p>
+            <div class="bot-demo">
+              <div class="example-visual example-photo"><img src="assets/studio-chat.webp" alt="Интерфейс демонстрационного диалога" loading="lazy" width="1000" height="667"></div>
+              <p class="bot-heading"><strong>Бот детейлинга</strong><span>Демо в браузере</span></p>
+              <p class="bot-reply" id="bot-reply" role="status">Чем помочь? Выберите вопрос ниже.</p>
+              <div class="bot-choices" id="bot-choices" hidden>
+                <button type="button" data-topic="services" aria-pressed="false">Услуги</button>
+                <button type="button" data-topic="price" aria-pressed="false">Цена</button>
+                <button type="button" data-topic="booking" aria-pressed="false">Запись</button>
+              </div>
+              <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
+              <noscript>Включите JavaScript, чтобы попробовать диалог.</noscript>
+            </div>
+            <a class="button format-contact" href="contact.html?goal=dialog">Обсудить этот формат</a>
+          </article>
+        </div>
       </div>
-    <a class="service-example" href="cases/forma/index.html#estimate">
-      <div class="example-visual example-photo"><img src="assets/forma-quote.webp" alt="Расчёт стоимости в FORMA" loading="lazy"></div>
-      <span class="example-caption"><strong>Калькулятор FORMA</strong><span>Попробовать</span></span>
-    </a>
-    <a class="button format-contact" href="contact.html?goal=estimate">Обсудить этот формат</a>
-  </article>
-  <article class="card" data-format="telegram" id="telegram">
-    <h2>Telegram-бот</h2>
-    <p>Для повторяющихся вопросов, выбора услуги или сбора заявки.</p>
-    <p><strong>Что входит</strong> Сценарий диалога, проверка ввода и способ передать запрос команде.</p>
-    <div class="bot-demo"><div class="example-visual example-photo"><img src="assets/studio-chat.webp" alt="" loading="lazy" width="1000" height="667"></div>
-      <p class="bot-heading"><strong>Бот детейлинга</strong><span>Демо в браузере</span></p>
-      <p class="bot-reply" id="bot-reply" role="status">Чем помочь? Выберите вопрос ниже.</p>
-      <div class="bot-choices" id="bot-choices" hidden>
-        <button type="button" data-topic="services" aria-pressed="false">Услуги</button>
-        <button type="button" data-topic="price" aria-pressed="false">Цена</button>
-        <button type="button" data-topic="booking" aria-pressed="false">Запись</button>
-      </div>
-      <a href="cases/forma/index.html#estimate" id="bot-next" hidden>Открыть калькулятор</a>
-      <noscript>Включите JavaScript, чтобы попробовать диалог.</noscript>
-    </div>
-    <a class="button format-contact" href="contact.html?goal=dialog">Обсудить этот формат</a>
-  </article>
-</div>
-</div>
-<section class="band">
-<h2>Что поможет начать</h2>
-<p class="lead">Список услуг, несколько примеров работ, типичные вопросы клиентов и контакт, по которому вы принимаете обращения.</p><a class="button" href="contact.html">Обсудить задачу</a></section></div>
-    <section class="footer-cta">
-<div class="wrap">
-<h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
+    </section>
+
+    <section class="studio-container studio-band studio-reveal" aria-labelledby="start-title">
+      <h2 id="start-title">Что поможет начать</h2>
+      <div><p class="lead">Список услуг, несколько примеров работ, типичные вопросы клиентов и контакт, по которому вы принимаете обращения.</p><a class="button" href="contact.html">Обсудить задачу</a></div>
+    </section>
+    <section class="studio-cta" aria-labelledby="services-cta">
+      <div class="studio-container studio-reveal"><div><p class="studio-kicker">Новый проект</p><h2 id="services-cta">Есть задача<br>для сайта?</h2></div><a class="button" href="contact.html">Обсудить проект</a></div>
+    </section>
   </main>
-  <footer class="wrap site-footer">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="125" height="30" alt=""></a>
-    <span class="studio-signature">Веб-студия</span>
-    <a class="button secondary" href="https://t.me/contessionss">Написать Антону</a>
+
+  <footer class="studio-footer">
+    <div class="studio-container"><a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную"><span class="alt-logo-main">ALT<span>.WEB</span></span></a><p>Веб-студия с Алтая.<br>Дизайн, код и интерактивные системы.</p><a class="studio-footer-link" href="https://t.me/contessionss">Написать Антону <span aria-hidden="true">↗</span></a></div>
   </footer>
 </body>
 </html>

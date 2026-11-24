@@ -3,97 +3,257 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0c10">
-  <meta name="description" content="ALT Web — дизайн и разработка лендингов для бизнеса. Структура, адаптивная версия и понятный путь к заявке.">
-  <title>Лендинги для бизнеса — ALT Web</title>
+  <meta name="theme-color" content="#080a09">
+  <meta name="description" content="ALT.WEB — веб-студия с Алтая. Дизайн и разработка лендингов, сайтов и интерактивных модулей для бизнеса. Лендинг под ключ — 15 000 ₽, 7 дней.">
+  <title>ALT.WEB — сайты с характером Алтая</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="design.js?v=9"></script>
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css?v=15">
-  <link rel="stylesheet" href="paint-preview.css?v=2">
-  <script defer src="paint-preview.js?v=2"></script>
-  <link rel="stylesheet" href="identity.css">
+  <link rel="stylesheet" href="home.css?v=3">
+  <script defer src="home.js?v=3"></script>
 </head>
-<body>
-  <a class="skip" href="#main">К содержанию</a>
-  <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
-    <nav aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html">Контакты</a></nav>
-    <div class="header-tools">
-      <a class="header-call" href="tel:+79635346712" aria-label="Позвонить Антону: +7 963 534 67-12"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 3 4 0 2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-.5-2 0-4 2-4Z"/></svg></a>
-      <a class="header-write" href="https://t.me/contessionss">Написать<svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="m2 9 15-6-4 14-4-5-3 2 .5-4Z" stroke="currentColor" stroke-linejoin="round"/><path d="m7 10 7-5-5 7" stroke="currentColor" stroke-linejoin="round"/></svg></a>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+<body class="home-page" data-scene="relief">
+  <a class="skip alt-skip" href="#main">К содержанию</a>
+
+  <header class="alt-header" data-header>
+    <div class="alt-header-inner">
+      <a class="alt-logo" href="#home" aria-label="ALT.WEB — на главную">
+        <span class="alt-logo-main">ALT<span>.WEB</span></span>
+        <span class="alt-logo-sub">DESIGN / CODE / AI</span>
+      </a>
+      <nav class="alt-navigation" id="alt-navigation" aria-label="Основная навигация">
+        <a href="#studio">Студия</a>
+        <a href="#services">Услуги</a>
+        <a href="#work">Работы</a>
+        <a href="#process">Процесс</a>
+        <a href="contact.html">Контакты</a>
+        <div class="alt-mobile-contacts">
+          <a href="tel:+79635346712">+7 963 534 67-12</a>
+          <a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a>
+        </div>
+      </nav>
+      <div class="alt-header-actions">
+        <div class="alt-direct-contacts" aria-label="Прямые контакты">
+          <a href="tel:+79635346712">+7 963 534 67-12</a>
+          <a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a>
+        </div>
+        <a class="alt-header-cta" href="contact.html"><span class="alt-cta-full">Обсудить проект</span><span class="alt-cta-short">Контакт</span><span aria-hidden="true">↗</span></a>
+        <button class="alt-menu-toggle" type="button" aria-expanded="false" aria-controls="alt-navigation">
+          <span>Меню</span><span class="alt-menu-icon" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
+
   <main id="main" tabindex="-1">
-    <section class="hero studio-hero" id="home"><img class="relief-image" src="assets/altai-relief.webp" width="1536" height="1024" fetchpriority="high" alt="">
-      <div class="wrap hero-copy">
-        <p class="kicker">Веб-студия с Алтая</p>
-        <h1>Сайты, где услуги <em>понятны.</em></h1>
-        <p class="lead">Дизайн и разработка лендингов для малого бизнеса. Помогаем клиенту понять услугу и оставить заявку.</p>
-        <div class="actions">
-          <a class="button" href="contact.html?goal=explain">Обсудить лендинг</a>
-          <a class="button secondary" href="work.html">Смотреть демо</a>
+    <section class="alt-hero" id="home" data-scene="relief" aria-labelledby="home-title">
+      <div class="alt-hero-media" aria-hidden="true">
+        <div class="alt-hero-projection">
+          <img class="alt-hero-relief" src="assets/altai-relief.webp" width="1536" height="1024" fetchpriority="high" alt="">
+          <img class="alt-hero-nature" src="assets/altai-landscape.webp" srcset="assets/altai-landscape-960.webp 960w, assets/altai-landscape-1600.webp 1600w, assets/altai-landscape.webp 2560w" sizes="100vw" width="2560" height="1707" fetchpriority="high" alt="">
         </div>
-        <ul class="hero-assurances" aria-label="Условия работы"><li>15 000 ₽ · 7 дней</li><li>Два раунда правок</li><li>Исходники остаются у вас</li></ul>
+        <div class="alt-hero-grid"></div>
+        <svg class="alt-hero-contours" viewBox="0 0 1440 900" preserveAspectRatio="none">
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M-80 690C130 510 250 810 460 650S730 380 900 540s330 210 620-60"/>
+            <path d="M-90 724C120 544 260 840 470 680S735 410 910 570s340 210 630-60"/>
+            <path d="M-100 758C110 578 270 870 480 710S740 440 920 600s350 210 640-60"/>
+            <path d="M-110 792C100 612 280 900 490 740S745 470 930 630s360 210 650-60"/>
+          </g>
+        </svg>
+        <div class="alt-projection-beam"></div>
       </div>
 
+      <div class="alt-scene-switch" role="group" aria-label="Визуальный режим всей страницы">
+        <button type="button" data-scene-button="relief" aria-pressed="true"><span>01</span> Цифровой</button>
+        <button type="button" data-scene-button="nature" aria-pressed="false"><span>02</span> Алтай</button>
+      </div>
+
+      <div class="alt-container alt-hero-inner">
+        <div class="alt-hero-meta">
+          <p><span class="alt-status-dot" aria-hidden="true"></span> Независимая веб-студия</p>
+          <p>Алтай / Россия <span>51°N · 86°E</span></p>
+        </div>
+
+        <h1 class="alt-hero-title" id="home-title" aria-label="ALT.WEB. Сайты, которые запоминаются.">
+          <span class="alt-hero-word" aria-hidden="true">
+            <span class="alt-word-base">ALT</span><span class="alt-word-suffix"><span class="alt-word-web">WEB</span><span class="alt-word-ai">AI</span><span class="alt-word-final"><span class="alt-word-dot">.</span><span class="alt-word-final-web"><span>W</span><span>E</span><span>B</span></span></span></span>
+            <span class="alt-brand-caption"><i></i><span data-brand-label>DESIGN / CODE</span></span>
+          </span>
+          <span class="alt-hero-claim">Сайты, которые<br>запоминаются.</span>
+        </h1>
+
+        <div class="alt-hero-bottom">
+          <p class="alt-hero-intro">Дизайн, разработка и интерактивные системы для бизнеса. Соединяем характер бренда с точностью технологий.</p>
+          <a class="alt-primary-cta" href="contact.html"><span>Начать проект</span><span aria-hidden="true">↗</span></a>
+          <div class="alt-hero-offer">
+            <span>Лендинг под ключ</span>
+            <strong>15 000 ₽</strong>
+            <span>7 дней · 2 раунда правок</span>
+          </div>
+        </div>
+      </div>
+      <a class="alt-scroll-cue" href="#studio"><span>Исследовать</span><i aria-hidden="true"></i></a>
     </section>
-<section class="wrap band offer" id="services" aria-labelledby="offer-title">
-  <div class="offer-visual page-proof"><img src="assets/polish-page.webp" alt="Первый экран демонстрационного лендинга полировки FORMA" width="1160" height="556" loading="lazy"></div>
-  <div class="offer-copy">
-    <p class="kicker">Простой старт</p>
-    <h2 id="offer-title">Лендинг для одной услуги</h2>
-    <p class="lead">Одна страница, на которой клиент видит предложение, понимает условия и знает, как обратиться.</p>
-    <dl class="offer-terms" aria-label="Стоимость и срок"><div><dt>Стоимость пакета</dt><dd>15 000 ₽</dd></div><div><dt>Срок</dt><dd>7 дней</dd></div></dl>
-    <ul class="offer-list">
-      <li><strong>Структура и содержание</strong><span>Оффер, условия, ответы на вопросы и призыв к действию.</span></li>
-      <li><strong>Дизайн и разработка</strong><span>Макет, адаптивная вёрстка и проверка основного сценария.</span></li>
-      <li><strong>Путь к заявке</strong><span>Переход в Telegram или звонок без лишних форм.</span></li>
-    </ul>
-    <div class="actions"><a class="button" href="contact.html?goal=explain">Обсудить лендинг</a><a class="sample-link" href="cases/forma/polish.html">Открыть демо FORMA</a></div>
-    <p class="offer-note">Срок начинается после согласования структуры и получения материалов. Дополнительные страницы и интерактивные модули считаются отдельно. <a href="services.html">Все услуги</a>.</p>
-  </div>
-</section>
-<section class="wrap feature" id="portfolio" aria-labelledby="forma-heading">
-  <figure class="paint-preview">
-    <div class="paint-sample">
-      <img src="assets/paint-before.webp" width="960" height="480" loading="lazy" alt="Следы моек в отражении лампы на модели лака">
-      <img class="polished" src="assets/paint-after.webp" width="960" height="480" loading="lazy" alt="Та же поверхность после моделирования полировки">
-      <span class="divider" aria-hidden="true"></span>
-      <input id="paint-boundary" type="range" min="0" max="100" value="50" aria-label="Доля поверхности до полировки, в процентах">
-    </div>
-    <figcaption class="sample-labels"><button type="button" data-boundary="100" aria-pressed="false">До полировки</button><button type="button" data-boundary="50" aria-pressed="true">Сравнить</button><button type="button" data-boundary="0" aria-pressed="false">После</button></figcaption>
-  </figure>
-  <div><p class="kicker">Демонстрационный проект · Детейлинг</p>
-    <h2 id="forma-heading">FORMA</h2>
-    <p>Потяните границу и посмотрите, как меняется отражение в лаке. В полном осмотре можно передвинуть сам свет и добавить полировку в расчёт.</p>
-    <div class="actions"><a class="button" href="cases/forma/index.html#inspection">Открыть осмотр</a><a class="button secondary" href="work.html">О кейсе</a></div>
-  </div>
-</section>
-<section class="wrap band">
-<div class="section-head">
-<p class="kicker">Работа над проектом</p>
-<h2>От цели к запуску</h2></div>
-<div class="grid three">
-<article class="card">
-<h3>Структура</h3>
-<p>Определяем, что посетитель должен понять и сделать.</p></article>
-<article class="card">
-<h3>Дизайн и разработка</h3>
-<p>Собираем страницы и проверяем сценарий на телефоне и компьютере.</p></article>
-<article class="card">
-<h3>Передача</h3>
-<p>Передаём исходники и объясняем, как менять контент.</p></article></div>
-<p><a class="button secondary" href="process.html">Посмотреть этапы</a></p></section>
-    <section class="footer-cta">
-<div class="wrap">
-<h2>Есть задача для сайта?</h2><a class="button" href="contact.html">Обсудить проект</a></div></section>
+
+    <section class="alt-manifest" id="studio" aria-labelledby="studio-title">
+      <div class="alt-container">
+        <p class="alt-section-index alt-reveal"><span>01</span> О студии</p>
+        <div class="alt-manifest-heading">
+          <h2 id="studio-title" class="alt-reveal">Природа.<br>Код.<br><span>Характер.</span></h2>
+          <div class="alt-manifest-copy alt-reveal">
+            <p>ALT.WEB родился на Алтае. Здесь масштаб чувствуется в каждой линии рельефа — ту же энергию мы переносим в цифровую среду.</p>
+            <p>Создаём выразительные сайты и рабочие интерактивные сценарии. AI-инструменты помогают в процессе, но решения остаются осмысленными и собранными вручную.</p>
+          </div>
+        </div>
+      </div>
+      <div class="alt-landscape alt-reveal" data-parallax-media>
+        <img src="assets/altai-valley.webp" srcset="assets/altai-valley-960.webp 960w, assets/altai-valley-1600.webp 1600w, assets/altai-valley.webp 2560w" sizes="100vw" width="2560" height="1707" loading="lazy" alt="Заснеженные вершины Алтая окружают горное озеро">
+        <div class="alt-container alt-landscape-caption">
+          <span>Алтай / точка отсчёта</span>
+          <span>Не имитируем технологичность. Строим её.</span>
+        </div>
+      </div>
+      <div class="alt-container alt-principles">
+        <article class="alt-reveal"><span>01</span><h3>Смысл до эффектов</h3><p>Сначала задача и путь клиента. Затем визуальный образ и движение.</p></article>
+        <article class="alt-reveal"><span>02</span><h3>Детали создают уровень</h3><p>Типографика, ритм, состояния наведения и адаптив работают как одна система.</p></article>
+        <article class="alt-reveal"><span>03</span><h3>Интерактив можно проверить</h3><p>Не видео о продукте, а работающие калькуляторы, фильтры и демонстрационные сценарии.</p></article>
+      </div>
+    </section>
+
+    <section class="alt-services" id="services" aria-labelledby="services-title">
+      <div class="alt-container">
+        <p class="alt-section-index alt-reveal"><span>02</span> Экспертиза</p>
+        <div class="alt-section-heading alt-reveal">
+          <h2 id="services-title">Не просто сайт.<br><span>Работающая система.</span></h2>
+          <p>От одной страницы до интерактивного модуля. Наведите на направление, чтобы увидеть пример.</p>
+        </div>
+        <div class="alt-services-layout">
+          <div class="alt-service-preview alt-reveal" aria-hidden="true">
+            <img class="is-active" data-service-image="landing" src="assets/polish-page.webp" width="1160" height="556" loading="lazy" alt="">
+            <img data-service-image="site" src="cases/furniture/assets/hero.webp" width="1400" height="933" loading="lazy" alt="">
+            <img data-service-image="interactive" src="assets/forma-paint.webp" width="1290" height="714" loading="lazy" alt="">
+            <img data-service-image="telegram" src="assets/studio-chat.webp" width="1160" height="556" loading="lazy" alt="">
+            <div class="alt-preview-caption"><span class="alt-status-dot"></span><span data-preview-label>Лендинг / FORMA</span><span>Демо</span></div>
+          </div>
+          <div class="alt-service-list">
+            <a class="alt-service-row alt-reveal" href="services.html#landing" data-service="landing" data-label="Лендинг / FORMA">
+              <span class="alt-service-number">01</span><span class="alt-service-content"><strong>Лендинги</strong><span>Структура, оффер, дизайн и адаптивная разработка одной страницы.</span></span><span class="alt-service-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="alt-service-row alt-reveal" href="services.html#site" data-service="site" data-label="Сайт компании / Мера">
+              <span class="alt-service-number">02</span><span class="alt-service-content"><strong>Сайты компании</strong><span>Несколько страниц, каталог услуг и единый визуальный язык бренда.</span></span><span class="alt-service-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="alt-service-row alt-reveal" href="services.html#interactive" data-service="interactive" data-label="Интерактив / Осмотр лака">
+              <span class="alt-service-number">03</span><span class="alt-service-content"><strong>Интерактив</strong><span>Калькуляторы, сравнения, фильтры и сценарии, которые вовлекают.</span></span><span class="alt-service-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="alt-service-row alt-reveal" href="services.html#telegram" data-service="telegram" data-label="Автоматизация / Telegram">
+              <span class="alt-service-number">04</span><span class="alt-service-content"><strong>Telegram-боты</strong><span>Быстрые ответы, запись и передача заявки в привычном канале.</span></span><span class="alt-service-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt-work" id="work" aria-labelledby="work-title">
+      <div class="alt-container">
+        <p class="alt-section-index alt-reveal"><span>03</span> Избранные демо</p>
+        <div class="alt-section-heading alt-reveal">
+          <h2 id="work-title">Проекты,<br>которые можно<br><span>потрогать.</span></h2>
+          <p>Не выдуманные клиентские результаты, а полноценные демонстрационные проекты с работающей механикой.</p>
+        </div>
+
+        <article class="alt-case alt-case-forma alt-reveal">
+          <a class="alt-case-media" href="cases/forma/index.html" aria-label="Открыть демонстрационный сайт FORMA">
+            <img src="cases/forma/assets/hero.jpg" width="1672" height="941" loading="lazy" alt="Графитовый спорткар в свете ламп детейлинг-студии">
+            <span class="alt-case-tag">Демонстрационный проект</span>
+            <span class="alt-case-open" aria-hidden="true">Открыть ↗</span>
+          </a>
+          <div class="alt-case-info">
+            <div><span>Детейлинг / интерактивный лендинг</span><h3>FORMA</h3></div>
+            <p>Осмотр лака при разном свете, сравнение полировки и расчёт программы ухода.</p>
+            <a href="work.html">Разбор кейса <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="alt-case-furniture alt-reveal">
+          <div class="alt-furniture-copy">
+            <span>Мебель / интернет-магазин</span>
+            <h3>МЕРА</h3>
+            <p>Каталог с фильтрами, проверка габаритов и смета. Интерфейс помогает выбрать, а не просто листать товары.</p>
+            <a class="alt-text-link" href="cases/furniture/index.html">Открыть магазин <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="alt-case-media" href="cases/furniture/index.html" aria-label="Открыть демонстрационный магазин Мера">
+            <img src="cases/furniture/assets/hero.webp" width="1400" height="933" loading="lazy" alt="Оливковый диван и столик из тёмного дерева в светлой гостиной">
+            <span class="alt-case-tag">Демонстрационный проект</span>
+            <span class="alt-case-open" aria-hidden="true">Открыть ↗</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt-offer" id="offer" aria-labelledby="offer-title">
+      <div class="alt-container">
+        <p class="alt-section-index alt-reveal"><span>04</span> Простой старт</p>
+        <div class="alt-offer-layout">
+          <div class="alt-offer-main alt-reveal">
+            <h2 id="offer-title">Один сильный лендинг.<br>Понятные условия.</h2>
+            <div class="alt-offer-price"><strong>15 000 ₽</strong><span>7 дней</span></div>
+            <p>Фиксированный объём помогает быстро запуститься и проверить спрос, не растягивая проект на месяцы.</p>
+            <a class="alt-primary-cta" href="contact.html?goal=explain"><span>Обсудить лендинг</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="alt-offer-list alt-reveal">
+            <article><span>01</span><div><h3>Структура и содержание</h3><p>Оффер, условия, ответы на вопросы и путь к заявке.</p></div></article>
+            <article><span>02</span><div><h3>Дизайн и разработка</h3><p>Макет, адаптивная вёрстка и проверка основного сценария.</p></div></article>
+            <article><span>03</span><div><h3>Передача</h3><p>Два раунда правок, исходники и объяснение, как менять контент.</p></div></article>
+            <p class="alt-offer-note">Срок начинается после согласования структуры и получения материалов. Дополнительные страницы и интерактивные модули считаются отдельно. <a href="services.html">Все услуги</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt-process" id="process" aria-labelledby="process-title">
+      <div class="alt-container">
+        <p class="alt-section-index alt-reveal"><span>05</span> Процесс</p>
+        <div class="alt-section-heading alt-reveal">
+          <h2 id="process-title">Без чёрного ящика.<br><span>С понятным результатом.</span></h2>
+          <p>Каждый этап заканчивается конкретным артефактом и согласованием следующего шага.</p>
+        </div>
+        <ol class="alt-process-list">
+          <li class="alt-reveal"><span>01</span><h3>Цель</h3><p>Определяем аудиторию, задачу и действие, к которому ведём посетителя.</p></li>
+          <li class="alt-reveal"><span>02</span><h3>Прототип</h3><p>Собираем структуру и содержание до визуальных эффектов.</p></li>
+          <li class="alt-reveal"><span>03</span><h3>Дизайн и код</h3><p>Создаём систему, адаптируем и оживляем ключевые сценарии.</p></li>
+          <li class="alt-reveal"><span>04</span><h3>Проверка</h3><p>Тестируем на разных экранах, передаём исходники и запускаем.</p></li>
+        </ol>
+        <a class="alt-text-link alt-process-link" href="process.html">Подробнее о процессе <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="alt-contact" id="contact" aria-labelledby="contact-title">
+      <div class="alt-contact-media" aria-hidden="true"><img src="assets/altai-sunset.webp" srcset="assets/altai-sunset-960.webp 960w, assets/altai-sunset-1600.webp 1600w, assets/altai-sunset.webp 2560w" sizes="100vw" width="2560" height="1707" loading="lazy" alt=""></div>
+      <div class="alt-container alt-contact-inner">
+        <p class="alt-section-index alt-reveal"><span>06</span> Новый проект</p>
+        <h2 id="contact-title" class="alt-reveal">Сделаем сайт,<br>который <span>заметят.</span></h2>
+        <div class="alt-contact-bottom alt-reveal">
+          <div><p>Расскажите о задаче. Начнём с цели и предложим понятный следующий шаг.</p><a href="https://t.me/contessionss">Telegram ↗</a><a href="tel:+79635346712">+7 963 534 67-12</a></div>
+          <a class="alt-contact-cta" href="contact.html"><span>Обсудить<br>проект</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="wrap site-footer">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="125" height="30" alt=""></a>
-    <span class="studio-signature">Веб-студия</span>
-    <a class="button secondary" href="https://t.me/contessionss">Написать Антону</a>
+
+  <footer class="alt-footer">
+    <div class="alt-container alt-footer-main">
+      <a class="alt-logo" href="#home" aria-label="ALT.WEB — наверх"><span class="alt-logo-main">ALT<span>.WEB</span></span></a>
+      <p>Веб-студия с Алтая<br>Дизайн / разработка / интерактив</p>
+      <a href="work.html">Все работы ↗</a>
+      <a href="contact.html">Начать проект ↗</a>
+    </div>
+    <div class="alt-container alt-footer-legal">
+      <span>© 2026 ALT.WEB</span>
+      <span class="alt-footer-credits">Фото: <a href="https://commons.wikimedia.org/wiki/File:Altai_Mountains,_Russia_-_29209951671.jpg" target="_blank" rel="noopener">Mike Norton / CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Altai_mountains_(10423517134).jpg" target="_blank" rel="noopener">Pavel Kazachkov / CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%BD%D0%B0_%D0%90%D0%BB%D1%82%D0%B0%D0%B5.jpg" target="_blank" rel="noopener">Arseniy333 / CC BY 4.0</a>. Кадрирование и цветокоррекция.</span>
+    </div>
   </footer>
 </body>
 </html>

@@ -3,55 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0c10">
-  <meta name="description" content="Контакты — ALT Web, дизайн и разработка сайтов для бизнеса.">
-  <title>Контакты — ALT Web</title>
+  <meta name="theme-color" content="#080a09">
+  <meta name="description" content="Обсудить сайт с ALT.WEB — короткий бриф, Telegram и контакты Антона.">
+  <title>Контакты — ALT.WEB</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <script src="design.js?v=9"></script>
   <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="studio.css?v=2">
+  <script src="studio.js?v=1" defer></script>
   <script src="cases/forma/catalog.js?v=3" defer></script>
-  <link rel="stylesheet" href="contact.css?v=2">
   <script src="brief.js?v=3" defer></script>
-  <link rel="stylesheet" href="identity.css">
 </head>
-<body>
+<body class="studio-page">
   <a class="skip" href="#main">К содержанию</a>
-  <header class="wrap site-header">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="150" height="36" alt=""></a>
-    <nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html" aria-current="page">Контакты</a></nav>
-    <div class="header-tools">
-      <a class="header-call" href="tel:+79635346712" aria-label="Позвонить Антону: +7 963 534 67-12"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 3 4 0 2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-.5-2 0-4 2-4Z"/></svg></a>
-      <a class="header-write" href="https://t.me/contessionss">Написать<svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="m2 9 15-6-4 14-4-5-3 2 .5-4Z" stroke="currentColor" stroke-linejoin="round"/><path d="m7 10 7-5-5 7" stroke="currentColor" stroke-linejoin="round"/></svg></a>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+  <header class="alt-header" data-header>
+    <div class="studio-header-inner">
+      <a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную"><span class="alt-logo-main">ALT<span>.WEB</span></span><span class="alt-logo-sub">DESIGN / CODE / AI</span></a>
+      <nav class="alt-navigation" id="alt-navigation" aria-label="Основная навигация"><a href="index.html#studio">Студия</a><a href="services.html">Услуги</a><a href="work.html">Работы</a><a href="process.html">Процесс</a><a href="contact.html" aria-current="page">Контакты</a><div class="alt-mobile-contacts"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div></nav>
+      <div class="alt-header-actions">
+        <div class="alt-direct-contacts" aria-label="Прямые контакты"><a href="tel:+79635346712">+7 963 534 67-12</a><a href="https://t.me/contessionss" target="_blank" rel="noopener">Telegram ↗</a></div>
+        <button class="theme-toggle" type="button" aria-label="Включить светлую тему" hidden><svg viewBox="0 0 32 32" aria-hidden="true"><g class="sun" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4m0 18v4M3 16h4m18 0h4M7 7l3 3m12 12 3 3M7 25l3-3M22 10l3-3"/></g><path class="moon" fill="currentColor" d="M24.7 21A11.8 11.8 0 0 1 11 6a11.5 11.5 0 1 0 13.7 15Z"/></svg></button>
+        <a class="alt-header-cta" href="#brief-result"><span class="alt-cta-full">Обсудить проект</span><span class="alt-cta-short">Контакт</span><span aria-hidden="true">↗</span></a>
+        <button class="alt-menu-toggle" type="button" aria-expanded="false" aria-controls="alt-navigation"><span>Меню</span><span class="alt-menu-icon" aria-hidden="true"></span></button>
+      </div>
     </div>
   </header>
-  <main class="wrap contact-page" id="main" tabindex="-1">
+
+  <main class="studio-container contact-page" id="main" tabindex="-1">
     <section class="contact-story" aria-labelledby="contact-title">
-      <p class="kicker">Контакты</p>
-      <h1 id="contact-title">Обсудим<br>ваш проект<span aria-hidden="true">.</span></h1>
-      <p class="contact-lead">Расскажите, чем занимается ваш бизнес и что должен уметь сайт. Вместе подберём формат.</p>
-      <aside class="contact-offer" aria-label="Условия стартового лендинга"><strong>Стартовый лендинг — 15 000 ₽</strong><p>7 дней на одну услугу и одну страницу. Срок начинается после согласования структуры и получения материалов.</p></aside>
-      <a class="contact-channel" href="https://t.me/contessionss">
-        <span><small>Написать Антону в Telegram</small><strong>@contessionss</strong></span>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20 20 4M5 4h15v15"/></svg>
-      </a>
-      <p><a href="tel:+79635346712">+7 963 534 67-12</a></p>
+      <p class="studio-kicker studio-reveal"><span>01</span> Контакты / новый проект</p>
+      <h1 id="contact-title" class="studio-reveal">Обсудим<br>ваш проект<span aria-hidden="true">.</span></h1>
+      <p class="contact-lead studio-reveal">Расскажите, чем занимается ваш бизнес и что должен уметь сайт. Вместе подберём формат.</p>
+      <aside class="contact-offer studio-reveal" aria-label="Условия стартового лендинга"><strong>Стартовый лендинг — 15 000 ₽</strong><p>7 дней на одну услугу и одну страницу. Срок начинается после согласования структуры и получения материалов.</p></aside>
+      <a class="contact-channel studio-reveal" href="https://t.me/contessionss"><span><small>Написать Антону в Telegram</small><strong>@contessionss</strong></span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20 20 4M5 4h15v15"/></svg></a>
+      <p class="studio-reveal"><a href="tel:+79635346712">+7 963 534 67-12</a></p>
     </section>
-    <section class="contact-editor" id="brief-result" aria-labelledby="draft-title">
+
+    <section class="contact-editor studio-reveal" id="brief-result" aria-labelledby="draft-title">
+      <p class="studio-kicker"><span>02</span> Короткий бриф</p>
       <h2 id="draft-title">Коротко о проекте</h2>
       <p class="draft-help">Ответьте на три вопроса, скопируйте готовое сообщение и откройте Telegram. Ничего не отправляется автоматически.</p>
       <form id="brief-builder" hidden>
         <label for="brief-business">Чем занимается ваш бизнес?</label>
         <input id="brief-business" name="business" type="text" required maxlength="120" placeholder="Например, студия детейлинга">
         <label for="brief-goal">Что должен делать сайт?</label>
-        <select id="brief-goal" name="goal">
-          <option value="">Пока хочу обсудить</option>
-          <option value="explain">Представлять услугу</option>
-          <option value="compare">Помогать выбирать услуги</option>
-          <option value="estimate">Рассчитывать стоимость</option>
-          <option value="dialog">Отвечать на частые вопросы</option>
-        </select>
+        <select id="brief-goal" name="goal"><option value="">Пока хочу обсудить</option><option value="explain">Представлять услугу</option><option value="compare">Помогать выбирать услуги</option><option value="estimate">Рассчитывать стоимость</option><option value="dialog">Отвечать на частые вопросы</option></select>
         <label for="brief-details">Подробности <span>по желанию</span></label>
         <textarea id="brief-details" name="details" rows="3" maxlength="1500" placeholder="Что уже есть и какой результат нужен?"></textarea>
         <button class="button" type="submit">Подготовить текст</button>
@@ -63,19 +61,12 @@
 Наш бизнес:
 Задача сайта:
 Материалы для старта:</textarea>
-        <div class="draft-actions">
-          <button class="button" id="copy-brief" type="button" hidden>Скопировать текст</button>
-          <a class="button secondary" id="telegram-brief" href="https://t.me/contessionss">Открыть Telegram</a>
-          <button class="draft-edit" id="edit-fields" type="button" hidden>К вопросам</button>
-        </div>
+        <div class="draft-actions"><button class="button" id="copy-brief" type="button" hidden>Скопировать текст</button><a class="button secondary" id="telegram-brief" href="https://t.me/contessionss">Открыть Telegram</a><button class="draft-edit" id="edit-fields" type="button" hidden>К вопросам</button></div>
         <p id="copy-status" role="status"></p>
       </div>
     </section>
   </main>
-  <footer class="wrap site-footer">
-    <a class="brand" href="index.html" aria-label="ALT Web, главная"><img src="assets/wordmark.svg?v=2" width="125" height="30" alt=""></a>
-    <span class="studio-signature">Веб-студия</span>
-    <a class="button secondary" href="https://t.me/contessionss">Написать Антону</a>
-  </footer>
+
+  <footer class="studio-footer"><div class="studio-container"><a class="alt-logo" href="index.html" aria-label="ALT.WEB — на главную"><span class="alt-logo-main">ALT<span>.WEB</span></span></a><p>Веб-студия с Алтая.<br>Дизайн, код и интерактивные системы.</p><a class="studio-footer-link" href="https://t.me/contessionss">Написать Антону <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>
